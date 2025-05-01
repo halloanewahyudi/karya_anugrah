@@ -1,11 +1,11 @@
 <template>
-  <div class="bg-gradient-to-b from-dark to-dark2 text-dark3 pt-16 pb-0 text-sm">
+  <div id="footer" class="bg-gradient-to-b from-dark to-dark2 text-dark3 pt-16 pb-0 text-sm">
     <div class="container">
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-10 ">
         <img src="/logo.png" alt="" class="w-20 lg:col-span-1">
 
-        <div class=" flex flex-col gap-4 lg:col-span-4">
+        <div class=" flex flex-col gap-4 lg:col-span-3">
          <h4 class="text-lg">Karya Anugrah Teknologi</h4>
            <div class="flex flex-col gap-2">
             <span class="flex  gap-2">
@@ -31,15 +31,34 @@
            </div>
         </div>
 
-        <div class="flex flex-col gap-4 lg:col-span-4"> <!-- products -->
+        <div class="flex flex-col gap-4 lg:col-span-3"> <!-- products -->
           <h4 class="text-lg">Products</h4>
          <ul class="flex flex-col gap-2">
-          <li v-for="product in products" :key="product" class="hover:text-brand-300 duration-200">
+          <li v-for="product in products" :key="product" class="">
             <nuxt-link to="/">
               {{ product.title }}
             </nuxt-link>
           </li>
          </ul>
+        </div>
+
+        <div class="flex flex-col gap-4 lg:col-span-3"> <!-- solution -->
+          <h4 class="text-lg">Solutions</h4>
+         <ul class="flex flex-col gap-2">
+          <li><NuxtLink to="/"> Retail Solutions  </NuxtLink></li>
+          <li><NuxtLink to="/"> Data Protection </NuxtLink></li>
+          <li><NuxtLink to="/"> Network & Security Solutions </NuxtLink></li>
+         </ul>
+        </div>
+
+        <div class="flex flex-col gap-4 lg:col-span-2"> <!-- social -->
+            <h4 class="text-lg">Social</h4>
+            <ul class="flex flex-col gap-2">
+              <li><NuxtLink to="/" class="flex items-center gap-2"> <Icon name="iconoir:youtube" /> Youtube </NuxtLink></li>
+              <li><NuxtLink to="/" class="flex items-center gap-2"> <Icon name="iconoir:twitter" /> Twitter </NuxtLink></li>
+              <li><NuxtLink to="/" class="flex items-center gap-2"> <Icon name="iconoir:linkedin" /> Linkedin </NuxtLink></li>
+             </ul>
+          
         </div>
 
         </div> <!-- end grid -->
@@ -55,6 +74,9 @@
 </script>
 
 <style scoped>
+#footer li a {
+    @apply hover:text-brand-300 duration-200;
+}
 h1,h2,h3,h4,h5,h6{
     @apply font-sans font-bold text-dark3;
 }
