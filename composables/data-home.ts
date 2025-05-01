@@ -1,0 +1,111 @@
+export const useDataHome = () => {
+
+  const solution = [
+    {
+      title: 'Retail Solutions',
+      description: 'Technology in retail is crucial for staying competitive and meeting the evolving needs of todays consumers',
+      image: '/img/solusi-1.jpg'
+    }, {
+      title: 'Data Protection',
+      description: `Data Protection
+  Cybercrime damages are getting more devastating each year and is predicted to cost companies $10.5 trillion annually in lost revenue by 2025.`,
+      image: '/img/solusi-2.jpg'
+    }, {
+      title: 'Network & Security Solutions',
+      description: `Network management is the backbone of any modern organization, it ensures that your systems and devices operate at their peak performance,`,
+      image: '/img/solusi-3.jpg'
+    }
+  ]
+
+  const partners = [
+    {
+      image: '/img/alfamart.png'
+    }, {
+      image: '/img/apc.png'
+    }, {
+      image: '/img/footfallcam.png'
+    }, {
+      image: '/img/fujitsu.png'
+    }, {
+      image: '/img/jasamarga.png'
+    }, {
+      image: '/img/postbank.png'
+    },
+    {
+      image:'/img/pupuk-indonesia.png'
+    }
+  ]
+
+
+  // fetch products
+  const products = [
+    {
+      title: 'Business Laptop',
+      description: `Product 1`,
+      image: 'https://karyaanugrah.com/wp-content/uploads/2023/11/HP-EliteBook-840-G8.webp',
+    }, {
+      title: 'Consumer Laptop',
+      description: `Product 2`,
+      image: 'https://karyaanugrah.com/wp-content/uploads/2023/11/HP-PC-24-cb1023d.webp'
+    }, {
+      title: 'Scanner',
+      description: `Product 3`,
+      image: 'https://karyaanugrah.com/wp-content/uploads/2023/11/HP-Scanjet-Pro-N4000.webp'
+    }, {
+      title: 'Monitor',
+      description: `Product 4`,
+      image: 'https://karyaanugrah.com/wp-content/uploads/2023/11/Samsung-22-FHD-Flat-Monitor.png'
+    }, {
+      title: 'POS',
+      description: `Product 5`,
+      image: 'https://karyaanugrah.com/wp-content/uploads/2023/11/BIGPOS-2150.png'
+    }, {
+      title: 'Inkbased Printer',
+      description: `Product 6`,
+      image: 'https://karyaanugrah.com/wp-content/uploads/2023/11/printer-epson-L3110.png'
+    }, {
+      title: 'Thermal Printer',
+      description: `Product 7`,
+      image: 'https://karyaanugrah.com/wp-content/uploads/2023/11/FP-2000-series.jpeg'
+    }, {
+      title: 'Network',
+      description: `Product 8`,
+      image: 'https://karyaanugrah.com/wp-content/uploads/2023/11/TP-Link-AC1200.jpg'
+    }
+  ]
+
+
+  const posts = [
+    {
+      title: 'Lorem Ipsum doloret sitamet',
+      description: 'Lorem Ipsum doloret sitamet',
+      image: 'https://fakeimg.pl/600x400/e3e0e0/b8b4b4?text=News+Image&font=noto&font_size=30',
+      date: '2023-10-12'
+    },
+    {
+      title: 'Sed ut perspiciatis unde omnis iste natus',
+      description: 'Lorem Ipsum doloret sitamet',
+      image: 'https://fakeimg.pl/600x400/e3e0e0/b8b4b4?text=News+Image&font=noto&font_size=30',
+      date: '2024-01-07'
+    },
+    {
+      title: 'sit voluptatem accusantium doloremque ',
+      description: 'Lorem Ipsum doloret sitamet',
+      image: 'https://fakeimg.pl/600x400/e3e0e0/b8b4b4?text=News+Image&font=noto&font_size=30',
+      date: '2024-2-21'
+    },
+    {
+      title: ' Quis autem vel eum iure reprehenderit qui in ',
+      description: 'Lorem Ipsum doloret sitamet',
+      image: 'https://fakeimg.pl/600x400/e3e0e0/b8b4b4?text=News+Image&font=noto&font_size=30',
+      date: '2024-10-7'
+    },
+  ]
+
+  return {
+    solution,
+    products,
+    posts,
+    partners
+  }
+}
