@@ -2,7 +2,7 @@ export const useDataHome = () => {
 
   const solution = [
     {
-      title: 'Computer & Periphera',
+      title: 'Computer & Peripheral',
       description: 'Laptop, PC,Monitor, Printer,Scanner, SSD, Memory',
       image: '/img/computer.svg'
     },  {
@@ -92,35 +92,35 @@ export const useDataHome = () => {
   // fetch products
   const products = [
     {
-      title: 'Business Laptop',
+      title: 'HP EliteBook 840 G8',
       description: `Product 1`,
       image: 'https://karyaanugrah.com/wp-content/uploads/2023/11/HP-EliteBook-840-G8.webp',
     }, {
-      title: 'Consumer Laptop',
+      title: 'HP PC 24-cb1023d',
       description: `Product 2`,
       image: 'https://karyaanugrah.com/wp-content/uploads/2023/11/HP-PC-24-cb1023d.webp'
     }, {
-      title: 'Scanner',
+      title: 'HP Scanjet Pro N4000',
       description: `Product 3`,
       image: 'https://karyaanugrah.com/wp-content/uploads/2023/11/HP-Scanjet-Pro-N4000.webp'
     }, {
-      title: 'Monitor',
+      title: 'Samsung 22" FHD Flat Monitor',
       description: `Product 4`,
       image: 'https://karyaanugrah.com/wp-content/uploads/2023/11/Samsung-22-FHD-Flat-Monitor.png'
     }, {
-      title: 'POS',
+      title: 'BIGPOS 2150',
       description: `Product 5`,
       image: 'https://karyaanugrah.com/wp-content/uploads/2023/11/BIGPOS-2150.png'
     }, {
-      title: 'Inkbased Printer',
+      title: 'Epson L3110',
       description: `Product 6`,
       image: 'https://karyaanugrah.com/wp-content/uploads/2023/11/printer-epson-L3110.png'
     }, {
-      title: 'Thermal Printer',
+      title: 'FP-2000​',
       description: `Product 7`,
       image: 'https://karyaanugrah.com/wp-content/uploads/2023/11/FP-2000-series.jpeg'
     }, {
-      title: 'Network',
+      title: 'TP-Link AC1200',
       description: `Product 8`,
       image: 'https://karyaanugrah.com/wp-content/uploads/2023/11/TP-Link-AC1200.jpg'
     }

@@ -5,10 +5,10 @@
     </div> -->
 
     <div class="container absolute top-0 left-0 right-0  min-h-screen flex flex-col justify-center items-end z-30">
-      <div class="max-w-[400px] w-full text-white ">
-        <h1 class="text-4xl lg:text-6xl font-bold text-white">IT Total  Solution 
+      <div class="max-w-[600px] w-full text-white ">
+        <h1 class="text-4xl lg:text-7xl font-bold text-white">IT Total  Solution 
         </h1>
-        <p class="mt-2 text-xl">designed to elevate <br> your technological landscape </p>
+        <p class="mt-2 text-xl">designed to elevate  your technological landscape </p>
 
       </div>
     </div>
@@ -31,8 +31,8 @@ import { Splide, SplideSlide } from '@splidejs/vue-splide'
 
 const images = [
   '/img/slide-1.jpg',
-  '/img/slide-1.jpg',
-   '/img/slide-1.jpg',
+  '/img/slide-4.jpg',
+  '/img/slide-5.jpg',
 ]
 
 const options = {

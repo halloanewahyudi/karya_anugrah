@@ -10,10 +10,10 @@ export const useMenus = () => {
     },
     {
       name: 'Products',
-      path: '/products'
+      path: '/products',
     },
     {
-      name: 'Partners',
+      name: 'Brands',
       path: '/partners'
     },
     {

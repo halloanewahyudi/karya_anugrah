@@ -1,5 +1,5 @@
 <template>
-  <div id="footer" class="bg-gradient-to-b from-dark to-dark2 text-dark3 pt-16 pb-0 text-sm">
+  <div id="footer" class="bg-gradient-to-b from-brand to-brand-900 text-brand-100 pt-16 pb-0 text-sm">
     <div class="container">
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-10 ">
@@ -43,11 +43,11 @@
         </div>
 
         <div class="flex flex-col gap-4 lg:col-span-3"> <!-- solution -->
-          <h4 class="text-lg">Solutions</h4>
+          <h4 class="text-lg">Marketplace</h4>
          <ul class="flex flex-col gap-2">
-          <li><NuxtLink to="/"> Retail Solutions  </NuxtLink></li>
-          <li><NuxtLink to="/"> Data Protection </NuxtLink></li>
-          <li><NuxtLink to="/"> Network & Security Solutions </NuxtLink></li>
+          <li><NuxtLink to="/" class="flex items-center gap-2"> <Icon name="arcticons:tokopedia" class="text-2xl"/> Tokopedia   </NuxtLink></li>
+          <li><NuxtLink to="/" class="flex items-center gap-2" ><Icon name="arcticons:shopee" class="text-2xl"/> Shopee </NuxtLink></li>
+          <li><NuxtLink to="/" class="flex items-center gap-2"> <Icon name="arcticons:lazada" class="text-2xl"/> Lazada </NuxtLink></li>
          </ul>
         </div>
 
@@ -64,13 +64,13 @@
         </div> <!-- end grid -->
     </div>
     <div class="border-t  border-dark3/30 py-5 text-xs mt-16 px-10 text-center">
-      Copyright © 2025 | PT. Karya Anugrah Teknologi
+      Copyright © 2025 | PT. Karya Anugrah Teknologi | All Rights Reserved . Powered by proweb
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
- const { products } = useDataHome()
+ const { products, solution } = useDataHome()
 </script>
 
 <style scoped>
