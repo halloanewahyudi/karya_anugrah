@@ -31,7 +31,7 @@ import { Splide, SplideSlide } from '@splidejs/vue-splide'
 
 const images = [
   '/img/slide-2.jpg',
-  '/img/slide-4.jpg',
+  '/img/slider-HP-karyaanugerah.jpg',
   '/img/slide-5a.jpg',
 ]
 
