@@ -6,19 +6,23 @@ export const useMenus = () => {
     },
     {
       name: 'About',
-      path: '/'
+      path: '/about'
     },
     {
-      name: 'Solution',
-      path: '/'
+      name: 'Products',
+      path: '/products'
     },
     {
-      name: 'News',
-      path: '/'
+      name: 'Partners',
+      path: '/partners'
+    },
+    {
+      name: 'Articles',
+      path: '/articles'
     },
     {
       name: 'Contact',
-      path: '/'
+      path: '/contact'
     }
   ]
   return {

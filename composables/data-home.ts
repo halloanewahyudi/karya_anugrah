@@ -2,18 +2,22 @@ export const useDataHome = () => {
 
   const solution = [
     {
-      title: 'Retail Solutions',
-      description: 'Technology in retail is crucial for staying competitive and meeting the evolving needs of todays consumers',
-      image: '/img/solusi-1.jpg'
-    }, {
-      title: 'Data Protection',
-      description: `Data Protection
-  Cybercrime damages are getting more devastating each year and is predicted to cost companies $10.5 trillion annually in lost revenue by 2025.`,
-      image: '/img/solusi-2.jpg'
-    }, {
-      title: 'Network & Security Solutions',
-      description: `Network management is the backbone of any modern organization, it ensures that your systems and devices operate at their peak performance,`,
-      image: '/img/solusi-3.jpg'
+      title: 'Computer & Periphera',
+      description: 'Laptop, PC,Monitor, Printer,Scanner, SSD, Memory',
+      image: '/img/computer.svg'
+    },  {
+      title: 'IT Infrastructure',
+      description: `Server, Data Storage, Networking, UPS, Rack`,
+      image: '/img/it-infrastructure.svg'
+    }, 
+    {
+      title: 'Solution',
+      description: `POS, Rental, Network & Security, Data Security, CCTV`,
+      image: '/img/solution-services.svg'
+    },{
+      title: 'Office Supplies',
+      description: `Toner, Ink, …`,
+      image: '/img/office-equipment.svg'
     }
   ]
 
