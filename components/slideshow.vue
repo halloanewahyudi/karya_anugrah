@@ -32,7 +32,7 @@ import { Splide, SplideSlide } from '@splidejs/vue-splide'
 const images = [
   '/img/slide-2.jpg',
   '/img/slide-4.jpg',
-  '/img/slide-5.jpg',
+  '/img/slide-5a.jpg',
 ]
 
 const options = {

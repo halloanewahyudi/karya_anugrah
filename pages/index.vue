@@ -23,7 +23,7 @@
         </p>
       </div>
 
-      <div class="text-center text-brand-50 mt-10">
+      <div class=" text-center text-brand-50 mt-10 text-xl">
         Trusted by our esteemed business partners and clients
       </div>
 
@@ -40,7 +40,7 @@
       <div class="text-center mb-10 text-brand-50">
         <h4 class="text-4xl font-semibold text-white">Populer Products</h4>
         <p>Excellence in Hardware and Software Solutions</p>
-        <div class="w-12 h-1 bg-brand mx-auto mt-2"></div>
+       <!--  <div class="w-12 h-1 bg-brand mx-auto mt-2"></div> -->
       </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 items-center lg:gap-10"

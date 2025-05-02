@@ -52,7 +52,7 @@
         </div>
 
         <div class="flex flex-col gap-4 lg:col-span-2"> <!-- social -->
-            <h4 class="text-lg">Social</h4>
+            <h4 class="text-lg">Social Media</h4>
             <ul class="flex flex-col gap-2">
               <li><NuxtLink to="/" class="flex items-center gap-2"> <Icon name="iconoir:youtube" /> Youtube </NuxtLink></li>
               <li><NuxtLink to="/" class="flex items-center gap-2"> <Icon name="iconoir:twitter" /> Twitter </NuxtLink></li>

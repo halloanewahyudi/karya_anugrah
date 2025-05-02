@@ -4,7 +4,7 @@
       <div class="flex justify-between items-center gap-4 ">
         <img src="/logo.png" alt="" class="w-16">
         <div class="menu-container lg:block w-full " :class=" openMenu ? '' : 'hidden' ">
-          <ul class="flex flex-col gap-2 lg:flex-row lg:gap-4 lg:justify-end ">
+          <ul class="flex flex-col gap-2 lg:flex-row lg:gap-10 lg:justify-end ">
           <li v-for="menu in menus" :key="menu.name">
             <nuxt-link :to="menu.path"  class="hover:text-secondary duration-200">
               {{ menu.name }}  
@@ -22,6 +22,7 @@
     class="fixed top-0 left-0 h-1 w-0 bg-secondary transition-all duration-200 ease-out z-[1000]"
     :style="{ width: progress + '%'}"
   ></div>
+  
 </template>
 
 <script lang="ts" setup>
