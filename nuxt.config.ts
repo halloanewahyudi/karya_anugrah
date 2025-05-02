@@ -7,6 +7,7 @@ export default defineNuxtConfig({
     'v-gsap-nuxt',
     '@nuxt/icon',
     '@nuxtjs/google-fonts',
+    'nuxt-marquee',
   ],
   plugins: ['~/plugins/splide.client.ts', '~/plugins/gsap.client.ts'],
 

@@ -40,6 +40,54 @@ export const useDataHome = () => {
     }
   ]
 
+  const brands = [
+    {
+      image: '/brand/adata.png'
+    }, {
+      image: '/brand/apc.png'
+    }, {
+      image: '/brand/apple.png'
+    }, {
+      image: '/brand/dell.png'
+    }, {
+      image: '/brand/epson.png'
+    }, {
+      image: '/brand/fujitsu.png'
+    },
+    {
+      image:'/brand/gli.png'
+    },{
+      image:'/brand/hp.png'
+    },
+    {
+      image:'/brand/lenovo.png'
+    },
+    {
+      image:'/brand/huawei.png'
+    },
+    {
+      image:'/brand/lg.png'
+    },
+    {
+      image:'/brand/logitech.png'
+    },
+    {
+      image:'/brand/microsoft.png'
+    },
+    {
+      image:'/brand/posbank.png'
+    },{
+      image:'/brand/samsung.png'
+    },{
+      image:'/brand/seagate.png'
+    },{
+      image:'/brand/tp-link.png'
+    },{
+      image:'/brand/v-gen.png'
+    },{
+      image:'/brand/wd.png'
+    }
+  ]
 
   // fetch products
   const products = [
@@ -77,7 +125,8 @@ export const useDataHome = () => {
       image: 'https://karyaanugrah.com/wp-content/uploads/2023/11/TP-Link-AC1200.jpg'
     }
   ]
-
+ 
+  
 
   const posts = [
     {
@@ -110,6 +159,7 @@ export const useDataHome = () => {
     solution,
     products,
     posts,
-    partners
+    partners,
+    brands
   }
 }

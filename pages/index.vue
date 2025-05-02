@@ -31,7 +31,7 @@
     </div><!--  end container -->
       <div class="p-20"></div>
   </section>
-  <section class="relative -top-40 z-40">  <!-- section product -->
+  <section class="relative -top-40 z-40 -mb-20">  <!-- section product -->
     <div class="container">
       <div class="text-center mb-10 text-brand-50">
         <h4 class="text-xl font-semibold text-white">Our Products</h4>
@@ -55,6 +55,15 @@
       </div>
     </div>
   </section> <!-- end section product -->
+  <section>
+    <NuxtMarquee>
+      <div v-for="logo in brands" :key="logo" class="h-[90px] hover:bg-brand-100 duration-200">
+        <NuxtLink to="/" class="">
+          <img :src="logo.image" alt="" class="h-full w-auto">
+        </NuxtLink>
+      </div>
+    </NuxtMarquee>
+  </section>
 </div><!--  end bg gray -->
 
 </template>
@@ -68,7 +77,7 @@ definePageMeta({
   keywords: 'Home',
 })
 
-const { solution, products, posts, partners } = useDataHome()
+const { solution, products, posts, partners , brands} = useDataHome()
 
 
 </script>
