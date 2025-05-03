@@ -1,19 +1,25 @@
 <template>
-  <div class="navbar fixed top-0 left-0 w-full py-2  z-50"
+  <div class="navbar fixed top-0 left-0 w-full   z-50"
     :class="[openMenu ? 'bg-gradient-to-b from-brand to-brand-700 text-brand-50 min-h-screen duration-300' : '', scrolled ? 'scrolled' : '']">
     <div class="container">
       <div class="flex justify-between items-center gap-4 ">
         <img src="/logo.png" alt="" class="w-16">
         <div class="menu-container lg:block w-full " :class="openMenu ? '' : 'hidden'">
           <ul class="flex flex-col gap-2 lg:flex-row lg:gap-10 lg:justify-end ">
-            <li v-for="menu in menus" :key="menu.name"  @mouseenter="showProdukMenu = true"
-            @mouseleave="handleLeave">
+            <li v-for="menu in menus" :key="menu.name" class="relative group py-2">
               <nuxt-link :to="menu.path" class="hover:text-secondary duration-200">
                 {{ menu.name }}
               </nuxt-link>
-              <Transition name="fade-slide">
-                <MegaMenu v-if="menu.name === 'Products' && showProdukMenu" @mouseleave="showProdukMenu = false" />
-              </Transition>
+
+                <ul class="sub-menu" v-if="menu.child" >
+                  <li v-for="child in menu.child" :key="child.name">
+                    <NuxtLink :to="child.path" class="hover:text-secondary duration-200 flex  gap-2"> 
+                      <img v-if="child.image" :src="child.image" alt="" class="w-6">
+                      {{ child.name }}
+                    </NuxtLink>
+                  </li>
+                </ul>
+           
             </li>
           </ul>
         </div>
@@ -25,7 +31,7 @@
     </div>
   </div>
   <div
-    class="fixed top-0 left-0 h-0.5 w-0 bg-gradient-to-tr from-brand-50 to-secondary transition-all duration-200 ease-out z-[1000]"
+    class="fixed top-0 left-0 h-0.5 w-0 bg-secondary transition-all duration-200 ease-out z-[1000]"
     :style="{ width: progress + '%' }"></div>
 
 
@@ -51,16 +57,6 @@ const { progress, isLoading, start, finish, clear } = useLoadingIndicator({
   estimatedProgress: (duration, elapsed) => (2 / Math.PI * 100) * Math.atan(elapsed / duration * 100 / 50)
 })
 
-// megamenu show
-const showProdukMenu = ref(false)
-
-const handleLeave = () => {
-  // Tambahkan delay jika ingin lebih smooth
-  setTimeout(() => {
-    showProdukMenu.value
-  }, 300)
-}
-
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
@@ -84,4 +80,10 @@ onMounted(() => {
 .navbar .router-link-active {
   @apply text-secondary;
 }
+
+.sub-menu {
+  @apply absolute top-10 left-0  z-50 lg:w-[180px] p-4  bg-white text-brand rounded-lg hidden group-hover:flex flex-col gap-3  shadow-xl text-sm opacity-0 group-hover:opacity-100 transition-all  duration-300;
+}
+
+
 </style>
