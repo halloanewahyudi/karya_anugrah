@@ -11,14 +11,37 @@
                 {{ menu.name }}
               </nuxt-link>
 
-                <ul class="sub-menu" v-if="menu.child" :class="menu.name === 'Brands' ? 'mm' : ''" >
+              <!-- 💡 Render Khusus untuk Brands -->
+              <template v-if="menu.name === 'Brands'">
+                <ul class="sub-menu mm">
+                  <li v-for="brand in paginatedBrands" :key="brand.name">
+                    <NuxtLink :to="brand.path"
+                      class="hover:text-secondary duration-200 flex flex-col text-[10px] items-center gap-0 hover:bg-brand-50 rounded-lg p-2">
+                      <img v-if="brand.image" :src="brand.image" alt="" class="w-16" />
+                      {{ brand.name }}
+                    </NuxtLink>
+                  </li>
+                  <li class="col-span-full flex gap-2  items-center mt-2">
+                    <button @click.stop="prevPage" :disabled="currentPage === 1"
+                      class="text-xs px-2 py-1 border rounded hover:bg-brand-100 disabled:opacity-50">Prev</button>
+                    <span class="text-xs">{{ currentPage }} / {{ totalPages }}</span>
+                    <button @click.stop="nextPage" :disabled="currentPage === totalPages"
+                      class="text-xs px-2 py-1 border rounded hover:bg-brand-100 disabled:opacity-50">Next</button>
+                  </li>
+                </ul>
+              </template>
+
+              <!-- 🧩 Default Sub-menu -->
+              <template v-else-if="menu.child">
+                <ul class="sub-menu">
                   <li v-for="child in menu.child" :key="child.name">
-                    <NuxtLink :to="child.path" class="hover:text-secondary duration-200 flex  gap-2"> 
-                      <img v-if="child.image" :src="child.image" alt="" class="w-6">
+                    <NuxtLink :to="child.path" class="hover:text-secondary duration-200 flex gap-2">
+                      <img v-if="child.image" :src="child.image" alt="" class="w-6" />
                       {{ child.name }}
                     </NuxtLink>
                   </li>
-                </ul>       
+                </ul>
+              </template>
             </li>
           </ul>
         </div>
@@ -29,11 +52,10 @@
 
     </div>
   </div>
-  <div
-    class="fixed top-0 left-0 h-0.5 w-0 bg-secondary transition-all duration-200 ease-out z-[1000]"
+  <div class="fixed top-0 left-0 h-0.5 w-0 bg-secondary transition-all duration-200 ease-out z-[1000]"
     :style="{ width: progress + '%' }"></div>
 
-   
+
 
 
 </template>
@@ -60,6 +82,28 @@ const { progress, isLoading, start, finish, clear } = useLoadingIndicator({
 
 // menu name brands hover
 
+
+const perPage = 10
+const currentPage = ref(1)
+
+const brandsMenu = computed(() => menus.find((menu) => menu.name === 'Brands'))
+const brands = computed(() => brandsMenu.value?.child || [])
+
+const paginatedBrands = computed(() => {
+  const start = (currentPage.value - 1) * perPage
+  return brands.value.slice(start, start + perPage)
+})
+
+const totalPages = computed(() => Math.ceil(brands.value.length / perPage))
+
+function nextPage() {
+  if (currentPage.value < totalPages.value) currentPage.value++
+}
+function prevPage() {
+  if (currentPage.value > 1) currentPage.value--
+}
+
+
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
 })
@@ -84,17 +128,18 @@ onMounted(() => {
 }
 
 .sub-menu {
-  @apply absolute top-10 left-0  z-50 lg:w-[180px] p-4  bg-white text-brand rounded-lg hidden group-hover:flex flex-col gap-3  shadow-xl text-sm opacity-0 group-hover:opacity-100 transition-all  duration-300;
+  @apply absolute top-10 left-0 z-50 lg:w-[180px] p-4 bg-white text-brand rounded-lg hidden group-hover:flex flex-col gap-3 shadow-xl text-sm opacity-0 group-hover:opacity-100 transition-all duration-300;
 }
 
 .sub-menu.mm {
-  @apply group-hover:grid grid-cols-1 lg:grid-cols-5 gap-6 lg:w-[600px] -translate-x-1/2;
-}
-.sub-menu.mm li a{
-  @apply flex flex-col text-[10px] items-center gap-0 hover:bg-brand-50 rounded-lg p-2 duration-300;
-}
-.sub-menu.mm li img{
-  @apply w-16;
+  @apply group-hover:grid grid-cols-1 lg:grid-cols-5 gap-2 lg:w-[600px] -translate-x-1/2;
 }
 
+.sub-menu.mm li a {
+  @apply flex flex-col text-[10px] items-center gap-0 hover:bg-brand-50 rounded-lg p-2 duration-300;
+}
+
+.sub-menu.mm li img {
+  @apply w-16;
+}
 </style>
