@@ -48,7 +48,7 @@ export const useMenus = () => {
       id: 4,
       name: 'Brands',
       path: '/partners',
-      child: brands
+      child: brands && brands.length > 5 ? brands.slice(0, 15) : brands
     },
     {
       id: 5,

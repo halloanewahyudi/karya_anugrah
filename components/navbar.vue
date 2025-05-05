@@ -88,13 +88,13 @@ onMounted(() => {
 }
 
 .sub-menu.mm {
-  @apply group-hover:flex-row flex-wrap gap-6 lg:w-[600px] -translate-x-1/2;
+  @apply group-hover:grid grid-cols-1 lg:grid-cols-5 gap-6 lg:w-[600px] -translate-x-1/2;
 }
 .sub-menu.mm li a{
-  @apply flex flex-col text-[10px] items-center gap-0 ;
+  @apply flex flex-col text-[10px] items-center gap-0 hover:bg-brand-50 rounded-lg p-2 duration-300;
 }
 .sub-menu.mm li img{
-  @apply w-12;
+  @apply w-16;
 }
 
 </style>
