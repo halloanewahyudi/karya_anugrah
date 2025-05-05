@@ -11,15 +11,14 @@
                 {{ menu.name }}
               </nuxt-link>
 
-                <ul class="sub-menu" v-if="menu.child" >
+                <ul class="sub-menu" v-if="menu.child" :class="menu.name === 'Brands' ? 'mm' : ''" >
                   <li v-for="child in menu.child" :key="child.name">
                     <NuxtLink :to="child.path" class="hover:text-secondary duration-200 flex  gap-2"> 
                       <img v-if="child.image" :src="child.image" alt="" class="w-6">
                       {{ child.name }}
                     </NuxtLink>
                   </li>
-                </ul>
-           
+                </ul>       
             </li>
           </ul>
         </div>
@@ -33,6 +32,8 @@
   <div
     class="fixed top-0 left-0 h-0.5 w-0 bg-secondary transition-all duration-200 ease-out z-[1000]"
     :style="{ width: progress + '%' }"></div>
+
+   
 
 
 </template>
@@ -57,6 +58,7 @@ const { progress, isLoading, start, finish, clear } = useLoadingIndicator({
   estimatedProgress: (duration, elapsed) => (2 / Math.PI * 100) * Math.atan(elapsed / duration * 100 / 50)
 })
 
+// menu name brands hover
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
@@ -85,5 +87,14 @@ onMounted(() => {
   @apply absolute top-10 left-0  z-50 lg:w-[180px] p-4  bg-white text-brand rounded-lg hidden group-hover:flex flex-col gap-3  shadow-xl text-sm opacity-0 group-hover:opacity-100 transition-all  duration-300;
 }
 
+.sub-menu.mm {
+  @apply group-hover:flex-row flex-wrap gap-6 lg:w-[600px] -translate-x-1/2;
+}
+.sub-menu.mm li a{
+  @apply flex flex-col text-[10px] items-center gap-0 ;
+}
+.sub-menu.mm li img{
+  @apply w-12;
+}
 
 </style>

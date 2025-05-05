@@ -5,16 +5,16 @@ export const useDataHome = () => {
       title: 'Computer & Peripheral',
       description: 'Laptop, PC,Monitor, Printer,Scanner, SSD, Memory',
       image: '/img/computer.svg'
-    },  {
+    }, {
       title: 'IT Infrastructure',
       description: `Server, Data Storage, Networking, UPS, Rack`,
       image: '/img/it-infrastructure.svg'
-    }, 
+    },
     {
       title: 'Solution',
       description: `POS, Rental, Network & Security, Data Security, CCTV`,
       image: '/img/solution-services.svg'
-    },{
+    }, {
       title: 'Office Supplies',
       description: `Toner, Ink, …`,
       image: '/img/office-equipment.svg'
@@ -36,56 +36,98 @@ export const useDataHome = () => {
       image: '/img/postbank.png'
     },
     {
-      image:'/img/pupuk-indonesia.png'
+      image: '/img/pupuk-indonesia.png'
     }
   ]
 
   const brands = [
     {
-      image: '/brand/adata.png'
+      name: 'Adata',
+      image: '/brand/adata.png',
+      path: '/brand/adata'
+    },
+    {
+      name: 'Apc',
+      image: '/brand/apc.png',
+      path: '/brand/apc'
+    },
+    {
+      name: 'Apple',
+      image: '/brand/apple.png',
+      path: '/brand/apple'
+    },
+    {
+      name: 'Dell',
+      image: '/brand/dell.png',
+      path: '/brand/dell'
     }, {
-      image: '/brand/apc.png'
+      name: 'Epson',
+      image: '/brand/epson.png',
+      path: '/brand/epson'
+    }, 
+    {
+      name: 'Fujitsu',
+      image: '/brand/fujitsu.png',
+      path: '/brand/fujitsu'
+    },
+    {
+      name: 'Gli',
+      image: '/brand/gli.png',
+      path: '/brand/gli'
     }, {
-      image: '/brand/apple.png'
+      name: 'HP',
+      image: '/brand/hp.png',
+      path: '/brand/hp'
+    },
+    {
+      name: 'Lenovo',
+      image: '/brand/lenovo.png',
+      path: '/brand/lenovo'
+    },
+    {
+      name:'Huawei',
+      image: '/brand/huawei.png',
+      path: '/brand/huawei'
+    },
+    {
+      name: 'LG',
+      image: '/brand/lg.png',
+      path:'/brand/lg'
+    },
+    {
+      name: 'Logitech',
+      image: '/brand/logitech.png',
+      path: '/brand/logitech'
+    },
+    {
+      name: 'Microsoft',
+      image: '/brand/microsoft.png',
+      path: '/brand/microsoft'
+    },
+    {
+      name:'Posbank',
+      image: '/brand/posbank.png',
+      path: '/brand/posbank'
     }, {
-      image: '/brand/dell.png'
+      name: 'Samsung',
+      image: '/brand/samsung.png',
+      path: '/brand/samsung'
     }, {
-      image: '/brand/epson.png'
+      name: 'Seagate',
+      image: '/brand/seagate.png',
+      path: '/brand/seagate'
     }, {
-      image: '/brand/fujitsu.png'
-    },
-    {
-      image:'/brand/gli.png'
-    },{
-      image:'/brand/hp.png'
-    },
-    {
-      image:'/brand/lenovo.png'
-    },
-    {
-      image:'/brand/huawei.png'
-    },
-    {
-      image:'/brand/lg.png'
-    },
-    {
-      image:'/brand/logitech.png'
-    },
-    {
-      image:'/brand/microsoft.png'
-    },
-    {
-      image:'/brand/posbank.png'
-    },{
-      image:'/brand/samsung.png'
-    },{
-      image:'/brand/seagate.png'
-    },{
-      image:'/brand/tp-link.png'
-    },{
-      image:'/brand/v-gen.png'
-    },{
-      image:'/brand/wd.png'
+      name:'TP-Link',
+      image: '/brand/tp-link.png',
+      path:'/brand/tp-link'
+    }, {
+      name:'V-Gen',
+      image: '/brand/v-gen.png',
+      path:'/brand/v-gen'
+    }, {
+      name:'WD',
+      image: '/brand/wd.png',
+      path:'/brand/wd'
     }
   ]
 
@@ -125,8 +167,8 @@ export const useDataHome = () => {
       image: 'https://karyaanugrah.com/wp-content/uploads/2023/11/TP-Link-AC1200.jpg'
     }
   ]
- 
-  
+
+
 
   const posts = [
     {
