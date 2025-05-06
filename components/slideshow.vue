@@ -82,7 +82,7 @@ const onMoved = (newIndex) => {
 
 <style scoped>
 /* Optional custom styling */
-.splide__slide.is-active img {
+/* .splide__slide.is-active img {
   @apply scale-110 duration-[7s];
-}
+} */
 </style>
