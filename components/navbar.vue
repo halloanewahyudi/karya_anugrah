@@ -1,5 +1,5 @@
 <template>
-  <div
+  <div  ref="root"
     class="navbar top-0 left-0 w-full z-50 transition-transform duration-300"
     :class="[
       openMenu ? 'bg-gradient-to-b from-brand to-brand-700 text-brand-50 min-h-screen duration-300' : '',
@@ -83,6 +83,9 @@
 </template>
 
 <script lang="ts" setup>
+const root = ref<HTMLElement | null>(null)
+  defineExpose({ el: root }) // supaya bisa diakses parent
+
 const { menus } = useMenus()
 const openMenu = ref(false)
 const scrolled = ref(false)

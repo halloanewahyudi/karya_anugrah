@@ -52,8 +52,8 @@ export const useMenus = () => {
     },
     {
       id: 5,
-      name: 'Articles',
-      path: '/articles'
+      name: 'News',
+      path: '/news'
     },
     {
       id: 6,

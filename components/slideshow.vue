@@ -20,12 +20,12 @@
       </SplideSlide>
     </Splide>
     <div
-      class="flex items-center justify-between w-full px-6 gap-4 mt-4 absolute top-1/2 left-1/2 transform -translate-x-1/2  text-white z-40">
-      <button @click="goPrev">
-        <Icon name="iconoir:arrow-left" class="text-3xl" />
+      class="flex items-center justify-between gap-4  absolute bottom-0 right-0  bg-brand  text-white z-40">
+      <button @click="goPrev" class="p-4">
+        <Icon name="iconoir:arrow-left" class="text-xl" />
       </button>
-      <button @click="goNext">
-        <Icon name="iconoir:arrow-right" class="text-3xl" />
+      <button @click="goNext" class="p-4">
+        <Icon name="iconoir:arrow-right" class="text-xl" />
       </button>
     </div>
   </div>
@@ -36,6 +36,16 @@
 import { Splide, SplideSlide } from '@splidejs/vue-splide'
 
 const slides = [
+  {
+    title: 'IT Total  Solution ',
+    image: '/slide/slide1-karyaanugerah.jpg',
+    description: 'designed to elevate  your technological landscape',
+    button: {
+      text: 'Read More',
+      link: '/'
+    },
+    bgColor: '#BFD5E3'
+  },
   {
     title: 'IT Total  Solution ',
     image: '/slide/slide1-karyaanugerah.jpg',

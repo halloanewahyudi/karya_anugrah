@@ -5,7 +5,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-6 lg:gap-10 ">
         <img src="/logo.png" alt="" class="w-20 lg:col-span-1">
 
-        <div class=" flex flex-col gap-4 lg:col-span-3">
+        <div class=" flex flex-col gap-4 lg:col-span-6">
          <h4 class="text-lg">Karya Anugrah Teknologi</h4>
            <div class="flex flex-col gap-2">
             <span class="flex  gap-2">
@@ -31,30 +31,20 @@
            </div>
         </div>
 
-        <div class="flex flex-col gap-4 lg:col-span-3"> <!-- products -->
-          <h4 class="text-lg">Products</h4>
-         <ul class="flex flex-col gap-2">
-          <li v-for="product in solutions" :key="product" class="">
-            <nuxt-link to="/">
-              {{ product.name }}
-            </nuxt-link>
-          </li>
-         </ul>
-        </div>
 
         <div class="flex flex-col gap-4 lg:col-span-3"> <!-- solution -->
-          <h4 class="text-lg">Menu</h4>
+          <h4 class="text-lg">Marketplace</h4>
          <ul class="flex flex-col gap-2">
-       <li v-for="menu in menus" :key="menu.name"><NuxtLink to="/"> {{ menu.name }}</NuxtLink></li>
+       <li ><NuxtLink to="/" class="flex items-center gap-2"> <Icon name="arcticons:tokopedia" class="text-3xl" /> Tokopedia</NuxtLink></li>
          </ul>
         </div>
 
         <div class="flex flex-col gap-4 lg:col-span-2"> <!-- social -->
             <h4 class="text-lg">Social Media</h4>
             <ul class="flex flex-col gap-2">
-              <li><NuxtLink to="/" class="flex items-center gap-2"> <Icon name="iconoir:youtube" /> Youtube </NuxtLink></li>
-              <li><NuxtLink to="/" class="flex items-center gap-2"> <Icon name="iconoir:twitter" /> Twitter </NuxtLink></li>
-              <li><NuxtLink to="/" class="flex items-center gap-2"> <Icon name="iconoir:linkedin" /> Linkedin </NuxtLink></li>
+           
+              <li><NuxtLink to="/" class="flex items-center gap-2"> <Icon name="iconoir:instagram" class="text-2xl" /> Instagram </NuxtLink></li>
+              <li><NuxtLink to="/" class="flex items-center gap-2"> <Icon name="iconoir:linkedin" class="text-2xl" /> Linkedin </NuxtLink></li>
              </ul>
           
         </div>
