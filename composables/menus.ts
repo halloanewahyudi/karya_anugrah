@@ -1,6 +1,6 @@
 
 export const useMenus = () => {
-  const { solution, brands } = useDataHome()
+  const { solutions, brands } = useDataHome()
   const menus = [
     {
       id: 1,

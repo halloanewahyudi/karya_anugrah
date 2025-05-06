@@ -1,9 +1,16 @@
 <template>
-  <div class="navbar fixed top-0 left-0 w-full   z-50"
-    :class="[openMenu ? 'bg-gradient-to-b from-brand to-brand-700 text-brand-50 min-h-screen duration-300' : '', scrolled ? 'scrolled' : '']">
+  <div
+    class="navbar top-0 left-0 w-full z-50 transition-transform duration-300"
+    :class="[
+      openMenu ? 'bg-gradient-to-b from-brand to-brand-700 text-brand-50 min-h-screen duration-300' : '',
+      scrolled ? 'scrolled' : '',
+      isVisible ? 'fixed translate-y-0' : 'fixed -translate-y-full'
+    ]"
+  >
     <div class="container">
       <div class="flex justify-between items-center gap-4 ">
         <img src="/logo.png" alt="" class="w-16">
+
         <div class="menu-container lg:block w-full " :class="openMenu ? '' : 'hidden'">
           <ul class="flex flex-col gap-2 lg:flex-row lg:gap-10 lg:justify-end ">
             <li v-for="menu in menus" :key="menu.name" class="relative group py-2">
@@ -11,7 +18,8 @@
                 {{ menu.name }}
               </nuxt-link>
 
-              <!-- 💡 Render Khusus untuk Brands -->
+              <!-- Sub-menu Brands -->
+              <Transition name="slide-up">
               <template v-if="menu.name === 'Brands'">
                 <ul class="sub-menu mm">
                   <li v-for="brand in paginatedBrands" :key="brand.name">
@@ -31,7 +39,7 @@
                 </ul>
               </template>
 
-              <!-- 🧩 Default Sub-menu -->
+              <!-- Default Sub-menu -->
               <template v-else-if="menu.child">
                 <ul class="sub-menu">
                   <li v-for="child in menu.child" :key="child.name">
@@ -42,47 +50,70 @@
                   </li>
                 </ul>
               </template>
+              </Transition>
             </li>
           </ul>
+        </div>
+
+        <div>
+          <button @click="btnSearch = !btnSearch"><Icon name="ri:search-line" class="text-3xl text-brand" /> </button>
         </div>
         <button @click="openMenu = !openMenu" class="lg:hidden">
           <Icon name="ri:menu-3-fill" class="text-3xl text-brand" :class="openMenu ? 'text-brand-50' : ''" />
         </button>
       </div>
-
     </div>
   </div>
+
+  <Transition name="slide-up">
+    <div v-if="btnSearch"  class="py-4 fixed top-0 left-0 w-full z-50 bg-brand-50">
+    <div class="container">
+      <div class="flex gap-2 items-center">
+        <input type="search" v-model="search" placeholder="Search..." class="w-full py-2 px-4 rounded-lg">
+        <button @click="btnSearch = false" class=""><Icon name="ri:close-line" class="text-3xl text-brand" /> </button>
+      </div>
+      
+    </div>
+  </div>
+  </Transition>
+ 
+
   <div class="fixed top-0 left-0 h-0.5 w-0 bg-secondary transition-all duration-200 ease-out z-[1000]"
     :style="{ width: progress + '%' }"></div>
-
-
-
-
 </template>
 
 <script lang="ts" setup>
 const { menus } = useMenus()
 const openMenu = ref(false)
 const scrolled = ref(false)
-// onscroll navbar add class scrolled
+const isVisible = ref(true)
+const previousScroll = ref(0)
+
+const search = ref('')
+const btnSearch = ref(false)
+
+// Scroll handler to show/hide navbar based on scroll direction
 const handleScroll = () => {
-  if (window.scrollY > 20) {
-    scrolled.value = true
+  const currentScroll = window.scrollY
+  scrolled.value = currentScroll > 20
+
+  if (currentScroll < previousScroll.value) {
+    isVisible.value = true // Scroll up
   } else {
-    scrolled.value = false
+    isVisible.value = false // Scroll down
   }
+
+  previousScroll.value = currentScroll
 }
-// progress
+
+// Loading indicator progress bar
 const { progress, isLoading, start, finish, clear } = useLoadingIndicator({
   duration: 2000,
   throttle: 200,
-  // This is how progress is calculated by default
   estimatedProgress: (duration, elapsed) => (2 / Math.PI * 100) * Math.atan(elapsed / duration * 100 / 50)
 })
 
-// menu name brands hover
-
-
+// Brands menu pagination
 const perPage = 10
 const currentPage = ref(1)
 
@@ -103,7 +134,6 @@ function prevPage() {
   if (currentPage.value > 1) currentPage.value--
 }
 
-
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
 })
@@ -111,11 +141,11 @@ onMounted(() => {
 
 <style>
 .navbar {
-  @apply text-white bg-transparent;
+  @apply text-brand bg-white border-b transition-transform duration-300;
 }
 
 .navbar.scrolled {
-  @apply bg-white text-brand duration-300;
+  @apply bg-white text-brand;
 }
 
 .menu-container {
@@ -142,4 +172,14 @@ onMounted(() => {
 .sub-menu.mm li img {
   @apply w-16;
 }
+
+/* transiiton slide up */
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.3s ease;
+}
+.slide-up-enter-from,
+.slide-up-leave-to {
+  transform: translate3d(0, -100%, 0);
+} 
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white p-6 rounded-xl border hover:shadow-lg">
+  <div class="bg-white p-6 rounded-lg   hover:shadow-lg">
    <slot />
     <h4 class="text-xl font-medium mb-3">{{ title }}</h4>
     <p>{{ description }}</p>

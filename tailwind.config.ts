@@ -42,10 +42,9 @@ const config: Config = {
             container: {
                 center: true,
                 padding: '2rem',
-
             },
             fontFamily: {
-                sans: ['Plus Jakarta Sans', 'sans-serif'],
+                sans: ['Inter', 'sans-serif'],
                 mono: ['PT Mono', 'monospace'],
             },
         },

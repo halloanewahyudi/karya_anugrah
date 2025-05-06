@@ -34,20 +34,18 @@
         <div class="flex flex-col gap-4 lg:col-span-3"> <!-- products -->
           <h4 class="text-lg">Products</h4>
          <ul class="flex flex-col gap-2">
-          <li v-for="product in products" :key="product" class="">
+          <li v-for="product in solutions" :key="product" class="">
             <nuxt-link to="/">
-              {{ product.title }}
+              {{ product.name }}
             </nuxt-link>
           </li>
          </ul>
         </div>
 
         <div class="flex flex-col gap-4 lg:col-span-3"> <!-- solution -->
-          <h4 class="text-lg">Marketplace</h4>
+          <h4 class="text-lg">Menu</h4>
          <ul class="flex flex-col gap-2">
-          <li><NuxtLink to="/" class="flex items-center gap-2"> <Icon name="arcticons:tokopedia" class="text-2xl"/> Tokopedia   </NuxtLink></li>
-          <li><NuxtLink to="/" class="flex items-center gap-2" ><Icon name="arcticons:shopee" class="text-2xl"/> Shopee </NuxtLink></li>
-          <li><NuxtLink to="/" class="flex items-center gap-2"> <Icon name="arcticons:lazada" class="text-2xl"/> Lazada </NuxtLink></li>
+       <li v-for="menu in menus" :key="menu.name"><NuxtLink to="/"> {{ menu.name }}</NuxtLink></li>
          </ul>
         </div>
 
@@ -70,7 +68,8 @@
 </template>
 
 <script lang="ts" setup>
- const { products, solution } = useDataHome()
+ const { products, solutions } = useDataHome()
+ const {menus} = useMenus()
 </script>
 
 <style scoped>

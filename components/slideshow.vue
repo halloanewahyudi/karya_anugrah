@@ -1,27 +1,33 @@
 <!-- components/ImageCarousel.vue -->
 <template>
   <div class="relative overflow-hidden">
-   <!--  <div class="absolute z-20 bg-gradient-to-br from-dark via-brand/60 to-brand-700/0 top-0 left-0 right-0 h-screen">
+    <!--  <div class="absolute z-20 bg-gradient-to-br from-dark via-brand/60 to-brand-700/0 top-0 left-0 right-0 h-screen">
     </div> -->
-
-    <div class="container absolute top-0 left-0 right-0  min-h-screen flex flex-col justify-center items-end z-30">
-      <div class="max-w-[600px] w-full text-white ">
-        <h1 class="text-4xl lg:text-7xl font-bold text-white">IT Total  Solution 
-        </h1>
-        <p class="mt-2 text-xl">designed to elevate  your technological landscape </p>
-
-      </div>
-    </div>
     <Splide ref="splide" :options="options">
-      <SplideSlide v-for="(image, index) in images" :key="index" class="">
-        <img :src="image" :alt="'Image ' + index" class="w-full h-screen object-cover fill-brand-500" />
+      <SplideSlide v-for="(slide, index) in slides" :key="index" class="relative bg-[#BFD5E3] "
+        >
+        <div class="container"  :class="`bg-['${slide.bgColor}']`">
+          <div class="grid grid-cols-1 lg:grid-cols-2 items-center min-h-screen">
+            <div>
+              <h1 class="text-4xl lg:text-8xl" v-html="slide.title"></h1>
+              <p class="mt-2 text-xl " v-html="slide.description"></p>
+              <NuxtLink v-if="slide.button" :to="slide.button.link" class="btn mt-4 inline-block">{{ slide.button.text }}</NuxtLink>
+            </div>
+            <img :src="slide.image" :alt="'Image ' + index" class="" />
+          </div>
+        </div>
+
       </SplideSlide>
     </Splide>
     <div
       class="flex items-center justify-between w-full px-6 gap-4 mt-4 absolute top-1/2 left-1/2 transform -translate-x-1/2  text-white z-40">
-      <button @click="goPrev"><Icon name="iconoir:arrow-left" class="text-3xl" /></button>
-      <button @click="goNext"> <Icon name="iconoir:arrow-right" class="text-3xl" /></button>
-    </div>  
+      <button @click="goPrev">
+        <Icon name="iconoir:arrow-left" class="text-3xl" />
+      </button>
+      <button @click="goNext">
+        <Icon name="iconoir:arrow-right" class="text-3xl" />
+      </button>
+    </div>
   </div>
 
 </template>
@@ -29,10 +35,17 @@
 <script setup>
 import { Splide, SplideSlide } from '@splidejs/vue-splide'
 
-const images = [
-  '/img/slide-2.jpg',
-  '/img/slider-HP-karyaanugerah.jpg',
-  '/img/slide-5a.jpg',
+const slides = [
+  {
+    title: 'IT Total  Solution ',
+    image: '/slide/slide1-karyaanugerah.jpg',
+    description: 'designed to elevate  your technological landscape',
+    button: {
+      text: 'Read More',
+      link: '/'
+    },
+    bgColor: '#BFD5E3'
+  }
 ]
 
 const options = {

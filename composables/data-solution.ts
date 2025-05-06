@@ -1,9 +1,32 @@
 export const useDataSolution = () => {
 
-  solution = [
-     title: 'Retail Solutions',
-     description: 'Technology in retail is crucial for staying competitive and meeting the evolving needs of todays consumers',
-     image: '/img/solusi-1.jpg'
+  const solutions = [
+    {
+      name: 'Computer & Peripheral',
+      description: 'Laptop, PC,Monitor, Printer,Scanner, SSD, Memory',
+      image: '/solution/soluiton1b.jpg',
+      link: '/brand/computer-peripheral'
+    },
+    {
+      name: 'IT Infrastructure',
+      description: `Server, Data Storage, Networking, UPS, Rack`,
+      image: '/solution/soluiton2.jpg',
+      link: '/brand/it-infrastructure'
+    },
+    {
+      name: 'Solution',
+      description: `POS, Rental, Network & Security, Data Security, CCTV`,
+      image: '/solution/soluiton3.jpg',
+      link: '/brand/solution'
+    },
+    {
+      name: 'Office Supplies',
+      description: `Toner, Ink, …`,
+      image: '/solution/soluiton4.jpg',
+      link: '/brand/office-supplies'
+    }
   ]
-  return ref()
+  return {
+    solutions
+  }
 }

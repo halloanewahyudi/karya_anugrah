@@ -1,23 +1,29 @@
 export const useDataHome = () => {
 
-  const solution = [
+  const solutions = [
     {
-      title: 'Computer & Peripheral',
+      name: 'Computer & Peripheral',
       description: 'Laptop, PC,Monitor, Printer,Scanner, SSD, Memory',
-      image: '/img/computer.svg'
-    }, {
-      title: 'IT Infrastructure',
-      description: `Server, Data Storage, Networking, UPS, Rack`,
-      image: '/img/it-infrastructure.svg'
+      image: '/solution/solution1b.jpg',
+      link: '/brand/computer-peripheral'
     },
     {
-      title: 'Solution',
+      name: 'IT Infrastructure',
+      description: `Server, Data Storage, Networking, UPS, Rack`,
+      image: '/solution/solution2.jpg',
+      link: '/brand/it-infrastructure'
+    },
+    {
+      name: 'Solution',
       description: `POS, Rental, Network & Security, Data Security, CCTV`,
-      image: '/img/solution-services.svg'
-    }, {
-      title: 'Office Supplies',
+      image: '/solution/solution3.jpg',
+      link: '/brand/solution'
+    },
+    {
+      name: 'Office Supplies',
       description: `Toner, Ink, …`,
-      image: '/img/office-equipment.svg'
+      image: '/solution/solution4.jpg',
+      link: '/brand/office-supplies'
     }
   ]
 
@@ -174,31 +180,31 @@ export const useDataHome = () => {
     {
       title: 'Lorem Ipsum doloret sitamet',
       description: 'Lorem Ipsum doloret sitamet',
-      image: 'https://fakeimg.pl/600x400/e3e0e0/b8b4b4?text=News+Image&font=noto&font_size=30',
+      image: 'https://images.pexels.com/photos/1015568/pexels-photo-1015568.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       date: '2023-10-12'
     },
     {
       title: 'Sed ut perspiciatis unde omnis iste natus',
       description: 'Lorem Ipsum doloret sitamet',
-      image: 'https://fakeimg.pl/600x400/e3e0e0/b8b4b4?text=News+Image&font=noto&font_size=30',
+      image: 'https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       date: '2024-01-07'
     },
     {
       title: 'sit voluptatem accusantium doloremque ',
       description: 'Lorem Ipsum doloret sitamet',
-      image: 'https://fakeimg.pl/600x400/e3e0e0/b8b4b4?text=News+Image&font=noto&font_size=30',
+      image: 'https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       date: '2024-2-21'
     },
     {
       title: ' Quis autem vel eum iure reprehenderit qui in ',
       description: 'Lorem Ipsum doloret sitamet',
-      image: 'https://fakeimg.pl/600x400/e3e0e0/b8b4b4?text=News+Image&font=noto&font_size=30',
+      image: 'https://images.pexels.com/photos/5055212/pexels-photo-5055212.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
       date: '2024-10-7'
     },
   ]
 
   return {
-    solution,
+    solutions,
     products,
     posts,
     partners,
