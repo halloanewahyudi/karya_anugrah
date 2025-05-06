@@ -7,7 +7,7 @@
       <SplideSlide v-for="(slide, index) in slides" :key="index" class="relative bg-[#BFD5E3] "
         >
         <div class="container"  :class="`bg-['${slide.bgColor}']`">
-          <div class="grid grid-cols-1 lg:grid-cols-2 items-center min-h-screen">
+          <div class="grid grid-cols-1 lg:grid-cols-2 items-center min-h-[546px]">
             <div>
               <h1 class="text-4xl lg:text-8xl" v-html="slide.title"></h1>
               <p class="mt-2 text-xl " v-html="slide.description"></p>
