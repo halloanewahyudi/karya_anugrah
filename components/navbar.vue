@@ -78,7 +78,7 @@
   </Transition>
  
 
-  <div class="fixed top-0 left-0 h-0.5 w-0 bg-secondary transition-all duration-200 ease-out z-[1000]"
+  <div class="fixed top-0 left-0 h-0.5 w-0 bg-gradient-to-r from-brand via-secondary to-tertiary transition-all duration-200 ease-out z-[1000]"
     :style="{ width: progress + '%' }"></div>
 </template>
 
