@@ -1,15 +1,47 @@
 <template>
-  <div class="grid grid-cols-1 md:grid-cols-2">
-    <div class=" flex flex-col justify-center items-start">
-      <div class="p-6 lg:p-10 ">
-        <div class="max-w-[600px] mx-auto">
-          <h4 class="text-4xl font-semibold">Contact Us</h4>
-          <p>Excellence in Hardware and Software Solutions</p>
+  <div class="grid grid-cols-1 md:grid-cols-2 bg-brand-50">
+    <div class=" flex flex-col justify-center">
+      <div class="p-6 lg:p-10 flex flex-col justify-center items-center">
+        <div class="max-w-[400px] w-full mx-auto ">
+          <SectionTitle title="Contact Us"
+            description="Specializes in the distribution of cutting-edge hardware and software solutions, designed to elevate your technological landscape"
+            class="mb-10" />
+
+          <div class=" flex flex-col gap-4 ">
+
+            <div class="flex flex-col gap-2">
+              <span class="flex  gap-2">
+                <Icon name="iconoir:map-pin" />
+                <div class="">
+                  Citra Garden 6 <br>
+                  Pegadungan, Tegal Alur, <br>
+                  Kec. Kalideres, Kota Jakarta Barat
+                </div>
+              </span>
+              <span class="flex items-center gap-2">
+                <Icon name="iconoir:phone" />
+                <div class="">
+                  +62 821 xxx xxx
+                </div>
+              </span>
+              <span class="flex items-center gap-2">
+                <Icon name="iconoir:mail" />
+                <div class="">
+                  yKo8b@example.com
+                </div>
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="p-6 lg:p-10 flex flex-col justify-center items-center bg-brand-50">
-      <FormContact class="max-w-[460px] w-full mx-auto bg-white rounded-lg border p-6 lg:p-10" />
+    <div class="p-6 lg:p-10 flex flex-col justify-center items-center bg-[url('/solution/solution1b.jpg')] bg-no-repeat bg-cover bg-center">
+      <div class="max-w-[460px] w-full mx-auto bg-white/90 rounded-lg border p-6 lg:p-10">
+        <h4>Get In Touch</h4>
+        <p>Fill out the form below and we will get back to you as soon as possible</p>
+        <FormContact class="mt-6" />
+      </div>
+
     </div>
   </div>
 </template>

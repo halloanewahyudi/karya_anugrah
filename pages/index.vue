@@ -98,6 +98,9 @@
           </h4>
         </div>
       </div>
+      <div class="block text-center mt-10">
+        <NuxtLink to="/" class="btn mx-auto inline-block text-center">Show More News</NuxtLink>
+      </div>
     </div>
   </section>
 
