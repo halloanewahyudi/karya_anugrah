@@ -1,0 +1,21 @@
+Untuk post:
+GET /wp-json/post/v1/all
+
+GET /wp-json/post/v1/by-slug/{slug}
+
+GET /wp-json/post/v1/by-category/{category}
+
+GET /wp-json/post/v1/related/{id}
+
+GET /wp-json/post/v1/filtered?s=keyword&category=slug&tag=slug
+
+Untuk product:
+GET /wp-json/product/v1/all
+
+GET /wp-json/product/v1/by-slug/{slug}
+
+GET /wp-json/product/v1/by-category/{category}
+
+GET /wp-json/product/v1/related/{id}
+
+GET /wp-json/product/v1/filtered?s=keyword&category=slug&tag=slug

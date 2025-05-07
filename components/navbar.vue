@@ -1,12 +1,9 @@
 <template>
-  <div  ref="root"
-    class="navbar top-0 left-0 w-full z-50 transition-transform duration-300"
-    :class="[
-      openMenu ? 'bg-gradient-to-b from-brand to-brand-700 text-brand-50 min-h-screen duration-300' : '',
-      scrolled ? 'scrolled' : '',
-      isVisible ? 'fixed translate-y-0' : 'fixed -translate-y-full'
-    ]"
-  >
+  <div ref="root" class="navbar top-0 left-0 w-full z-50 transition-transform duration-300" :class="[
+    openMenu ? 'bg-gradient-to-b from-brand to-brand-700 text-brand-50 min-h-screen duration-300' : '',
+    scrolled ? 'scrolled' : '',
+    isVisible ? 'fixed translate-y-0' : 'fixed -translate-y-full'
+  ]">
     <div class="container">
       <div class="flex justify-between items-center gap-4 ">
         <img src="/logo.png" alt="" class="w-16">
@@ -20,43 +17,45 @@
 
               <!-- Sub-menu Brands -->
               <Transition name="slide-up">
-              <template v-if="menu.name === 'Brands'">
-                <ul class="sub-menu mm">
-                  <li v-for="brand in paginatedBrands" :key="brand.name">
-                    <NuxtLink :to="brand.path"
-                      class="hover:text-secondary duration-200 flex flex-col text-[10px] items-center gap-0 hover:bg-brand-50 rounded-lg p-2">
-                      <img v-if="brand.image" :src="brand.image" alt="" class="w-16" />
-                      {{ brand.name }}
-                    </NuxtLink>
-                  </li>
-                  <li class="col-span-full flex gap-2  items-center mt-2">
-                    <button @click.stop="prevPage" :disabled="currentPage === 1"
-                      class="text-xs px-2 py-1 border rounded hover:bg-brand-100 disabled:opacity-50">Prev</button>
-                    <span class="text-xs">{{ currentPage }} / {{ totalPages }}</span>
-                    <button @click.stop="nextPage" :disabled="currentPage === totalPages"
-                      class="text-xs px-2 py-1 border rounded hover:bg-brand-100 disabled:opacity-50">Next</button>
-                  </li>
-                </ul>
-              </template>
+                <template v-if="menu.name === 'Brands'">
+                  <ul class="sub-menu mm">
+                    <li v-for="brand in paginatedBrands" :key="brand.name">
+                      <NuxtLink :to="brand.path"
+                        class="hover:text-secondary duration-200 flex flex-col text-[10px] items-center gap-0 hover:bg-brand-50 rounded-lg p-2">
+                        <img v-if="brand.image" :src="brand.image" alt="" class="w-16" />
+                        {{ brand.name }}
+                      </NuxtLink>
+                    </li>
+                    <li class="col-span-full flex gap-2  items-center mt-2">
+                      <button @click.stop="prevPage" :disabled="currentPage === 1"
+                        class="text-xs px-2 py-1 border rounded hover:bg-brand-100 disabled:opacity-50">Prev</button>
+                      <span class="text-xs">{{ currentPage }} / {{ totalPages }}</span>
+                      <button @click.stop="nextPage" :disabled="currentPage === totalPages"
+                        class="text-xs px-2 py-1 border rounded hover:bg-brand-100 disabled:opacity-50">Next</button>
+                    </li>
+                  </ul>
+                </template>
 
-              <!-- Default Sub-menu -->
-              <template v-else-if="menu.child">
-                <ul class="sub-menu">
-                  <li v-for="child in menu.child" :key="child.name">
-                    <NuxtLink :to="child.path" class="hover:text-secondary duration-200 flex gap-2">
-                      <img v-if="child.image" :src="child.image" alt="" class="w-6" />
-                      {{ child.name }}
-                    </NuxtLink>
-                  </li>
-                </ul>
-              </template>
+                <!-- Default Sub-menu -->
+                <template v-else-if="menu.child">
+                  <ul class="sub-menu">
+                    <li v-for="child in menu.child" :key="child.name">
+                      <NuxtLink :to="child.path" class="hover:text-secondary duration-200 flex gap-2">
+                        <img v-if="child.image" :src="child.image" alt="" class="w-6" />
+                        {{ child.name }}
+                      </NuxtLink>
+                    </li>
+                  </ul>
+                </template>
               </Transition>
             </li>
           </ul>
         </div>
 
         <div>
-          <button @click="btnSearch = !btnSearch"><Icon name="ri:search-line" class="text-3xl text-brand" /> </button>
+          <button @click="btnSearch = !btnSearch">
+            <Icon name="ri:search-line" class="text-3xl text-brand" />
+          </button>
         </div>
         <button @click="openMenu = !openMenu" class="lg:hidden">
           <Icon name="ri:menu-3-fill" class="text-3xl text-brand" :class="openMenu ? 'text-brand-50' : ''" />
@@ -66,26 +65,38 @@
   </div>
 
   <Transition name="slide-up">
-    <div v-if="btnSearch"  class="py-4 fixed top-0 left-0 w-full z-50 bg-brand-50">
-    <div class="container">
-      <div class="flex gap-2 items-center">
-        <input type="search" v-model="search" placeholder="Search..." class="w-full py-2 px-4 rounded-lg">
-        <button @click="btnSearch = false" class=""><Icon name="ri:close-line" class="text-3xl text-brand" /> </button>
-      </div>
-      
-    </div>
-  </div>
-  </Transition>
- 
+    <div v-if="btnSearch" class="py-4 fixed top-0 left-0 w-full z-50 bg-brand-50">
+      <div class="container">
+        <div class="flex gap-2 items-center">
+          <input type="search" v-model="search" placeholder="Search..." class="w-full py-2 px-4 rounded-lg"
+            @keyup.enter="handleSearch" />
+          <button @click="btnSearch = false" class="">
+            <Icon name="ri:close-line" class="text-3xl text-brand" />
+          </button>
+        </div>
 
-  <div class="fixed top-0 left-0 h-0.5 w-0 bg-gradient-to-r from-brand via-secondary to-tertiary transition-all duration-200 ease-out z-[1000]"
+      </div>
+    </div>
+  </Transition>
+
+
+  <div
+    class="fixed top-0 left-0 h-0.5 w-0 bg-gradient-to-r from-brand via-secondary to-tertiary transition-all duration-200 ease-out z-[1000]"
     :style="{ width: progress + '%' }"></div>
 </template>
 
 <script lang="ts" setup>
 const root = ref<HTMLElement | null>(null)
-  defineExpose({ el: root }) // supaya bisa diakses parent
+defineExpose({ el: root }) // supaya bisa diakses parent
 
+const router = useRouter()
+
+function handleSearch() {
+  if (search.value.trim()) {
+    btnSearch.value = false
+    router.push({ path: '/search', query: { q: search.value.trim() } })
+  }
+}
 const { menus } = useMenus()
 const openMenu = ref(false)
 const scrolled = ref(false)
@@ -181,8 +192,9 @@ onMounted(() => {
 .slide-up-leave-active {
   transition: all 0.3s ease;
 }
+
 .slide-up-enter-from,
 .slide-up-leave-to {
   transform: translate3d(0, -100%, 0);
-} 
+}
 </style>

@@ -6,6 +6,9 @@ body{
 h1,h2,h3,h4,h5,h6{
     @apply font-sans font-bold text-gray-950;
 }
+p{
+    @apply pb-7 leading-[1.6];
+}
 
 .btn{
     @apply py-2.5 rounded-full px-6 bg-gradient-to-r from-brand to-brand-900 text-white font-semibold hover:bg-brand-900 duration-300 hover:ring-2 hover:ring-brand-600 hover:ring-offset-2 ;
