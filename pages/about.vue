@@ -6,7 +6,7 @@
             <h1 class="text-4xl lg:text-6xl text-white ">
               About Us
             </h1>
-            <p> What we can provide for you? <br> Hardware, notebooks, printers, IoT, software, POS - We’ve got them all!</p>
+            <p> Powering Your Digital Future</p>
           </div>
           <div>
             <img src="/img/about.jpg" alt="" class="w-full h-full object-cover">
@@ -16,16 +16,21 @@
     <section class="py-20 text-center">
      
       <div class="max-w-screen-lg mx-auto px-6">
-        <SectionTitle title="What do we mean by solutions?" />
-        <p>In tech, most problems can’t be solved with a one fits all product. Oftentimes, the best solutions for your
-          business needs a combination of various hardwares and softwares. You can think of this page as listing the
-          packages our company offers to solve a general problem your company may be facing by providing specific
-          solutions for it through the combinations of several products</p>
+        <SectionTitle title="WHO ARE WE?" />
+        <p>Karya Anugrah Teknologi is an IT distribution company that specializes in providing the best hardware for our customers. Our journey began in the retail industry, where we supported our clients by providing retail-specific solutions to meet the growing demands of the sector. Building on this success and recognizing the pervasive digitalization of our world, we have expanded our services to include data protection and network management.
+        </p>
+        <p>
+          As a company, our mission extends beyond simply delivering products to your businesses. We are dedicated to providing unwavering technical support throughout the entire process starting from helping your business choose the right solutions, guaranteeing warranty from vendors, providing service centers, and providing flexibility for specific local challenges.
+        </p>
       </div>
 
     </section>
     <section>
+  <div class="container">
+    <div class="grid grid-cols-1 lg:grid-cols-2">
 
+    </div>
+  </div>
     </section>
   </div>
 </template>
