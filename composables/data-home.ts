@@ -5,25 +5,25 @@ export const useDataHome = () => {
       name: 'Computer & Peripheral',
       description: 'Laptop, PC,Monitor, Printer,Scanner, SSD, Memory',
       image: '/solution/solution1b.jpg',
-      link: '/brand/computer-peripheral'
+      link: '/category/computer-peripheral'
     },
     {
       name: 'IT Infrastructure',
       description: `Server, Data Storage, Networking, UPS, Rack`,
       image: '/solution/solution2.jpg',
-      link: '/brand/it-infrastructure'
+      link: '/category/it-infrastructure'
     },
     {
       name: 'Solution',
       description: `POS, Rental, Network & Security, Data Security, CCTV`,
       image: '/solution/solution3.jpg',
-      link: '/brand/solution'
+      link: '/category/solution'
     },
     {
       name: 'Office Supplies',
       description: `Toner, Ink, …`,
       image: '/solution/solution4.jpg',
-      link: '/brand/office-supplies'
+      link: '/category/office-supplies'
     }
   ]
 

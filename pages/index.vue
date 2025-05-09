@@ -85,7 +85,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 ">
         <div v-for="post in posts" :key="post" class="group">
           <div class="rounded-lg overflow-hidden mb-4">
-            <img :src="post.image" alt="" class="rounded-lg  group-hover:scale-105 duration-300">
+            <img :src="post.featured_image" alt="" class="rounded-lg  group-hover:scale-105 duration-300">
           </div>
 
           <div class="flex items-center gap-2 text-xs">
@@ -94,12 +94,12 @@
           </div>
 
           <h4>
-            <NuxtLink to="/"> {{ post.title }}</NuxtLink>
+            <NuxtLink :to="`/post/${post.slug}`"> {{ post.title }}</NuxtLink>
           </h4>
         </div>
       </div>
       <div class="block text-center mt-10">
-        <NuxtLink to="/" class="btn mx-auto inline-block text-center">Show More News</NuxtLink>
+        <NuxtLink to="/news" class="btn mx-auto inline-block text-center">Show More News</NuxtLink>
       </div>
     </div>
   </section>
@@ -116,8 +116,22 @@ definePageMeta({
   keywords: 'Home',
 })
 
-const { solutions, products, posts, partners, brands } = useDataHome()
+const { solutions, products, partners, brands } = useDataHome()
+const { url, options } = useWpApi('post/v1/all?_embed', {
+  query: computed(() => ({
+    per_page: 4,
+  }))
+})
 
+const { data: posts, status, error, refresh, execute } = useLazyFetch(url, {
+  ...options,
+  async onResponse({ response }) {
+    const total = response.headers.get('X-WP-TotalPages')
+    if (total) {
+      totalPages.value = parseInt(total)
+    }
+  }
+})
 
 </script>
 <style></style>

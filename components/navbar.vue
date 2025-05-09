@@ -65,10 +65,10 @@
   </div>
 
   <Transition name="slide-up">
-    <div v-if="btnSearch" class="py-4 fixed top-0 left-0 w-full z-50 bg-brand-50">
+    <div v-if="btnSearch" class="py-4 fixed top-0 left-0 w-full h-auto  z-50 bg-white">
       <div class="container">
         <div class="flex gap-2 items-center">
-          <input type="search" v-model="search" placeholder="Search..." class="w-full py-2 px-4 rounded-lg"
+          <input type="search" v-model="search" placeholder="Search..." class="w-full py-2 px-4 rounded-lg border"
             @keyup.enter="handleSearch" />
           <button @click="btnSearch = false" class="">
             <Icon name="ri:close-line" class="text-3xl text-brand" />
@@ -155,11 +155,11 @@ onMounted(() => {
 
 <style>
 .navbar {
-  @apply text-brand bg-white border-b transition-transform duration-300;
+  @apply bg-white border-b transition-transform duration-300;
 }
 
 .navbar.scrolled {
-  @apply bg-white text-brand;
+  @apply bg-white;
 }
 
 .menu-container {
@@ -168,11 +168,14 @@ onMounted(() => {
 
 /* active link */
 .navbar .router-link-active {
-  @apply text-secondary;
+  @apply text-brand;
 }
-
+.navbar .router-link-active::before {
+  content: '';
+  @apply absolute bottom-0 left-0 w-auto h-0.5 bg-brand;
+}
 .sub-menu {
-  @apply absolute top-10 left-0 z-50 lg:w-[180px] p-4 bg-white text-brand rounded-lg hidden group-hover:flex flex-col gap-3 shadow-xl text-sm opacity-0 group-hover:opacity-100 transition-all duration-300;
+  @apply absolute top-10 left-0 z-50 lg:w-[180px] p-4 bg-white  rounded-lg hidden group-hover:flex flex-col gap-3 shadow-xl text-sm opacity-0 group-hover:opacity-100 transition-all duration-300;
 }
 
 .sub-menu.mm {

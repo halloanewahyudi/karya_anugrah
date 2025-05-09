@@ -3,7 +3,7 @@ const page = ref(1)
 const perPage = 12
 const totalPages = ref(1)
 
-const { url, options } = useWpApi('product/v1/by-category/' + useRoute().params.brand + '?_embed', {
+const { url, options } = useWpApi('product/v1/by-brand/' + useRoute().params.brand + '?_embed', {
   query: computed(() => ({
     per_page: perPage,
     page: page.value
@@ -26,9 +26,9 @@ watch(page, () => {
 </script>
 
 <template>
-  <section class="bg-brand-50 text-brand mb-20">
-    <div class="container py-20 text-center">
-      <h4 class="text-4xl font-semibold"> News</h4>
+  <section class="  border-b mb-20">
+    <div class="container py-2 text-center">
+      <h4 class="text-4xl font-semibold uppercase"> {{ useRoute().params.brand }}</h4>
     </div>
   </section>
 
@@ -39,18 +39,8 @@ watch(page, () => {
     <div v-else-if="error">Failed to load posts</div>
     <div v-else>
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        <div v-for="post in posts" :key="post.id" class="group">
-          <div class="rounded-lg overflow-hidden mb-4 max-h-[220px]">
-            <img :src="post?.featured_image" alt="" class="rounded-lg group-hover:scale-105 duration-300" />
-          </div>
-          <div class="flex items-center gap-2 text-xs">
-            <Icon name="iconoir:calendar-check" class="text-brand" />
-            <span>{{ post?.date }}</span>
-          </div>
-          <h4>
-            <NuxtLink :to="`/product/${post?.slug}`">{{ post?.title }}</NuxtLink>
-          </h4>
-        </div>
+        <CardProduct v-for="post in posts" :key="post.id" :title="post?.title" :link="`/product/${post?.slug}`" :featured_image="post?.featured_image" />
+
       </div>
 
       <!-- Pagination controls -->

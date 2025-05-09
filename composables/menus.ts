@@ -15,30 +15,30 @@ export const useMenus = () => {
     {
       id: 3,
       name: 'Products',
-      path: '/products',
+      path: '#',
       child: [
         {
           id: 1,
           name: 'Computer & Peripheral',
-          path: '/brand/computer-peripheral',
+          path: '/category/computer-peripheral',
           image: '/img/computer.svg'
         },
         {
           id: 2,
           name: 'IT Infrastructure',
-          path: '/brand/it-infrastructure',
+          path: '/category/it-infrastructure',
           image: '/img/it-infrastructure.svg'
         },
         {
           id: 3,
           name: 'Solution',
-          path: '/brand/solution',
+          path: '/category/solution',
           image: '/img/solution-services.svg'
         },
         {
           id: 4,
           name: 'Office Supplies',
-          path: '/brand/office-supplies',
+          path: '/category/office-supplies',
           image: '/img/office-equipment.svg'
         }
         
@@ -47,7 +47,7 @@ export const useMenus = () => {
     {
       id: 4,
       name: 'Brands',
-      path: '/partners',
+      path: '#',
       child: brands
     },
     {

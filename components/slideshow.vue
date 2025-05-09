@@ -42,7 +42,7 @@ const slides = [
     description: 'designed to elevate  your technological landscape',
     button: {
       text: 'Read More',
-      link: '/'
+      link: '/about'
     },
     bgColor: '#BFD5E3'
   },
@@ -52,7 +52,7 @@ const slides = [
     description: 'designed to elevate  your technological landscape',
     button: {
       text: 'Read More',
-      link: '/'
+      link: '/about'
     },
     bgColor: '#BFD5E3'
   }
