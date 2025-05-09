@@ -10,6 +10,7 @@
       </div>
       <div class="">
         <div class="bg-brand-50 p-6 lg:p-10">
+          <SectionTitle :title="product?.title" class="text-center mb-4" />
           <ul class="flex border-b border-brand mb-4">
             <li class="cursor-pointer px-4 py-2"
               :class="activeTab === 'description' ? 'border-b-2 border-brand font-semibold' : ''"
