@@ -5,11 +5,11 @@
         <div class="max-w-[400px] w-full mx-auto ">
           <SectionTitle title="Contact Us"
             description="Specializes in the distribution of cutting-edge hardware and software solutions, designed to elevate your technological landscape"
-            class="mb-10" />
+            class="" />
 
           <div class=" flex flex-col gap-4 ">
 
-            <div class="flex flex-col gap-2">
+            <div class="flex flex-col gap-2 bg-brand-100 text-gray-900 p-6 rounded-lg">
               <span class="flex  gap-2">
                 <Icon name="iconoir:map-pin" />
                 <div class="">
