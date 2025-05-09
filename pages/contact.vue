@@ -38,7 +38,7 @@
     <div class="p-6 lg:p-10 flex flex-col justify-center items-center bg-[url('/solution/solution1b.jpg')] bg-no-repeat bg-cover bg-center">
       <div class="max-w-[460px] w-full mx-auto bg-white/90 rounded-lg border p-6 lg:p-10">
         <h4>Get In Touch</h4>
-        <p>Fill out the form below and we will get back to you as soon as possible</p>
+        <p>Fill out the form below and we will get back to you as soon as possible </p>
         <FormContact class="mt-6" />
       </div>
 

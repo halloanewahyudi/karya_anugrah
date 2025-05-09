@@ -9,16 +9,16 @@
         <img :src="product?.featured_image" :alt="product?.title" />
       </div>
       <div class="">
-        <div class="bg-brand-50 p-6 lg:p-10">
+        <div class="bg-gray-50 p-6 lg:p-10">
           <SectionTitle :title="product?.title" class="text-center mb-4" />
-          <ul class="flex border-b border-brand mb-4">
+          <ul class="flex border-b border-gray-200 mb-4">
             <li class="cursor-pointer px-4 py-2"
-              :class="activeTab === 'description' ? 'border-b-2 border-brand font-semibold' : ''"
+              :class="activeTab === 'description' ? 'border-b-2 border-gray-900 font-semibold' : ''"
               @click="activeTab = 'description'">
               Description
             </li>
             <li class="cursor-pointer px-4 py-2"
-              :class="activeTab === 'specification' ? 'border-b-2 border-brand font-semibold' : ''"
+              :class="activeTab === 'specification' ? 'border-b-2 border-gray-900 font-semibold' : ''"
               @click="activeTab = 'specification'">
               Specification
             </li>
@@ -29,18 +29,18 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 items-center ">
           <a :href="product?.acf?.market_place?.url" target="_blank"
-            class="w-full h-full p-3 text-center cursor-pointer flex items-center justify-center gap-2 bg-brand-300 text-brand hover:bg-brand-200 duration-300">
+            class="group w-full h-full p-3 text-center cursor-pointer flex items-center justify-center gap-2 bg-gray-800 text-gray-50 hover:bg-brand-200 hover:text-brand duration-300">
             Check on
-            <Icon name="arcticons:tokopedia" class="text-2xl text-brand" />
+            <Icon name="arcticons:tokopedia" class="text-2xl text-gray-50 group-hover:text-brand duration-300" />
           </a>
           <NuxtLink to="/contact"
-            class="w-full h-full p-3 text-center cursor-pointer bg-brand-300 text-brand hover:bg-brand-200 duration-300">
+            class="w-full h-full p-3 text-center cursor-pointer bg-gray-900 text-brand-50 hover:bg-brand-200 hover:text-brand duration-300">
             Contact 
           </NuxtLink>
           <a href="https://www.tokopedia.com/karyaanugrahteknologi" target="_blank"
-            class="w-full h-full p-3 text-center cursor-pointer flex items-center justify-center gap-2 bg-brand-300 text-brand hover:bg-brand-200 duration-300">
+            class="group w-full h-full p-3 text-center cursor-pointer flex items-center justify-center gap-2 bg-gray-950 text-brand-50 hover:bg-brand-200 hover:text-brand  duration-300">
 
-            <Icon name="arcticons:tokopedia" class="text-3xl text-brand" />
+            <Icon name="arcticons:tokopedia" class="text-3xl text-brand-50 group-hover:text-brand duration-300" />
           </a>
         </div>
       </div>
