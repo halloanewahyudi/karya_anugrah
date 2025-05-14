@@ -6,7 +6,11 @@
   ]">
     <div class="container">
       <div class="flex justify-between items-center gap-4 ">
-        <img src="/logo.png" alt="" class="w-16">
+        <div class="brand flex items-center gap-2 w-full">
+           <img src="/logo.png" alt="" class="w-16">
+          <h4 class="text-xl font-bold text-brand/85 hidden md:block">Karya Anugrah Teknologi</h4>
+        </div>
+       
 
         <div class="menu-container lg:block w-full " :class="openMenu ? '' : 'hidden'">
           <ul class="flex flex-col gap-2 lg:flex-row lg:gap-10 lg:justify-end ">
