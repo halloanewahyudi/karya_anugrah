@@ -1,7 +1,7 @@
 import { Title } from "#components"
 
 export const useDataAbout = () => {
-  const aboutOne = [
+  const aboutOne = ref( [
     {
       title:'APC Best Growing Partner',
       description:'During our early days, we strive to boost our client’s business productivity through our high-quality technical support and high-grade products, providing a wide range of solutions: retail, data protection, network. After a few years of establishing PT. Karya Anugerah Teknologi, we were honored to receive an award from APC by Schneider Electric as the ‘APC Best Growing Partner’ in 2015.',
@@ -17,9 +17,9 @@ export const useDataAbout = () => {
      description:'PT. Karya Anugerah Teknologi has been working with Pupuk Indonesia, a state-owned company, during the past couple of years. Our company assists Pupuk Indonesia in their digital journey through supplying trusted IT products and services. This resulted in the ‘Pupuk Indonesia Best Performance Vendor’ awards that we have delightedly received in 2021 and 2022.',
      image:'/about/about3.jpg',
     }
-  ]
+  ] )
  
-  const aboutTwo = [
+  const aboutTwo = ref ( [
     {
       title:'Trusted business partner of Alfamart',
       description:'As one of our biggest and earliest clients, we are entrusted by PT.SUMBER ALFARIA TRIJAYA,Tbk to continuously provide a comprehensive range of products such as thermal printers, UPS systems, POS equipment, and scanners. Our tailored approach and commitment to delivering top-notch hardware have contributed to streamlining the business processes of PT. SUMBER ALFARIA TRIJAYA, Tbk, ensuring they have the tools necessary for success in their industry.',
@@ -36,13 +36,13 @@ export const useDataAbout = () => {
       image:'/about/about6.jpg',
     }
   ]
-
-  const faq = [
+  )
+  const faq = ref( [
     {
       question:'Curious about the what Karya Anugrah Teknologi offers?',
       answer:'Or maybe who we work with and what warranties we provide. Explore our FAQ section for a comprehensive understanding of our services and products.'
     }
-  ]
+  ] )
 
   return {
     aboutOne,
