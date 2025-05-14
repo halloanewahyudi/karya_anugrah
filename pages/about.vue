@@ -1,16 +1,18 @@
 <template>
   <div>
     <!-- Hero Section -->
-    <section>
-      <div class="container">
-        <div class="py-20 text-center">
-          <h1 class="text-4xl lg:text-6xl font-bold">About Us</h1>
-          <p>Powering Your Digital Future</p>
+    <section class="relative mb-20">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 items-center min-h-screen">
+        <div class="bg-brand text-brand-50 p-6 lg:p-10 h-full flex flex-col justify-center items-center lg:col-span-2">
+          <div>
+<h1 class="text-4xl lg:text-6xl font-bold text-white">About Us</h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas tincidunt malesuada venenatis. Integer id ipsum ac ante iaculis pulvinar</p>
+          </div>
+
         </div>
-        <div class="mb-20">
-          <img src="/img/about.jpg" alt="" class="w-full h-[380px] object-cover rounded-tr-2xl rounded-bl-2xl" />
-        </div>
+          <img src="/img/page-header.avif" alt="" class="h-full object-cover object-center lg:col-span-3">
       </div>
+
     </section>
 
     <!-- Who Are We -->
