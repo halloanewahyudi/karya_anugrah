@@ -29,18 +29,18 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 items-center ">
           <a :href="product?.acf?.market_place?.url" target="_blank"
-            class="group w-full h-full p-3 text-center cursor-pointer flex items-center justify-center gap-2 bg-gray-800 text-gray-50 hover:bg-brand-200 hover:text-brand duration-300">
+            class="group w-full h-full p-3 text-center cursor-pointer flex items-center justify-center gap-2 bg-tertiary text-gray-900 hover:bg-brand-200 hover:text-brand duration-300">
             Check on
-            <Icon name="arcticons:tokopedia" class="text-2xl text-gray-50 group-hover:text-brand duration-300" />
+            <Icon name="arcticons:tokopedia" class="text-2xl text-gray-900 group-hover:text-brand duration-300" />
           </a>
           <NuxtLink to="/contact"
-            class="w-full h-full p-3 text-center cursor-pointer bg-gray-900 text-brand-50 hover:bg-brand-200 hover:text-brand duration-300">
+            class="w-full h-full p-3 text-center cursor-pointer bg-tertiary text-gray-900 hover:bg-brand-200 hover:text-brand duration-300">
             Contact 
           </NuxtLink>
           <a href="https://www.tokopedia.com/karyaanugrahteknologi" target="_blank"
-            class="group w-full h-full p-3 text-center cursor-pointer flex items-center justify-center gap-2 bg-gray-950 text-brand-50 hover:bg-brand-200 hover:text-brand  duration-300">
+            class="group w-full h-full p-3 text-center cursor-pointer flex items-center justify-center gap-2 bg-tertiary text-gray-900 hover:bg-brand-200 hover:text-brand  duration-300">
 
-            <Icon name="arcticons:tokopedia" class="text-3xl text-brand-50 group-hover:text-brand duration-300" />
+            <Icon name="arcticons:tokopedia" class="text-3xl text-gray-900 group-hover:text-brand duration-300" />
           </a>
         </div>
       </div>

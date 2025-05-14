@@ -34,9 +34,10 @@ const config: Config = {
                     '900': '#734210',
                     '950': '#432205',
                 },
-             dark:'#040b26',
-             dark2:'#0a1231',
-             dark3:'#bbcbd7',
+                tertiary: '#98fd0b',
+                dark: '#040b26',
+                dark2: '#0a1231',
+                dark3: '#bbcbd7',
 
             },
             container: {

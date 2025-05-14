@@ -48,13 +48,6 @@
       </div>
     </section>
 
-    <section class="mb-20">
-      <div class="container text-center">
-        <SectionTitle title="OUR FOOTPRINTS" />
-        <img src="/about/map.png" alt="">
-      </div>
-    </section>
-
     <section>
       <div class="container flex flex-col gap-6 mb-20">
         <SectionTitle title="OUR LATEST WORK" class="text-center mb-10" />
