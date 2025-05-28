@@ -45,12 +45,6 @@ export const useMenus = () => {
       ]
     },
     {
-      id: 4,
-      name: 'Brands',
-      path: '#',
-      child: brands
-    },
-    {
       id: 5,
       name: 'News',
       path: '/news'

@@ -21,8 +21,28 @@
 
               <!-- Sub-menu Brands -->
               <Transition name="slide-up">
+                <template v-if="menu.name === 'Brands'">
+                  <ul class="sub-menu mm">
+                    <li v-for="brand in paginatedBrands" :key="brand.name">
+                      <NuxtLink :to="brand.path"
+                        class="hover:text-secondary duration-200 flex flex-col text-[10px] items-center gap-0 hover:bg-brand-50 rounded-lg p-2">
+                        <img v-if="brand.image" :src="brand.image" alt="" class="w-16" />
+                        {{ brand.name }}
+                      </NuxtLink>
+                    </li>
+                    <li class="col-span-full flex gap-2  items-center mt-2">
+                      <button @click.stop="prevPage" :disabled="currentPage === 1"
+                        class="text-xs px-2 py-1 border rounded hover:bg-brand-100 disabled:opacity-50">Prev</button>
+                      <span class="text-xs">{{ currentPage }} / {{ totalPages }}</span>
+                      <button @click.stop="nextPage" :disabled="currentPage === totalPages"
+                        class="text-xs px-2 py-1 border rounded hover:bg-brand-100 disabled:opacity-50">Next</button>
+                    </li>
+                  </ul>
+                </template>
+
                 <!-- Default Sub-menu -->
-                  <ul v-if="menu.child" class="sub-menu">
+                <template v-else-if="menu.child">
+                  <ul class="sub-menu">
                     <li v-for="child in menu.child" :key="child.name">
                       <NuxtLink :to="child.path" class="hover:text-secondary duration-200 flex gap-2">
                         <img v-if="child.image" :src="child.image" alt="" class="w-6" />
@@ -30,6 +50,7 @@
                       </NuxtLink>
                     </li>
                   </ul>
+                </template>
               </Transition>
             </li>
           </ul>
