@@ -26,7 +26,7 @@ onMounted(() => {
   window.addEventListener('resize', setPadding)
 })
 
-onBeforeUnmount(() => {
+/* onBeforeUnmount(() => {
   window.removeEventListener('resize', setPadding)
-})
+}) */
 </script>

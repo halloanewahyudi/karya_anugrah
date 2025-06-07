@@ -1,6 +1,6 @@
 
 export const useMenus = () => {
-  const { solutions, brands } = useDataHome()
+ 
   const menus = [
     {
       id: 1,
@@ -20,25 +20,25 @@ export const useMenus = () => {
         {
           id: 1,
           name: 'Computer & Peripheral',
-          path: '/category/computer-peripheral',
+          path: '/brands/computer-peripheral',
           image: '/img/computer.svg'
         },
         {
           id: 2,
           name: 'IT Infrastructure',
-          path: '/category/it-infrastructure',
+          path: '/brands/it-infrastructure',
           image: '/img/it-infrastructure.svg'
         },
         {
           id: 3,
           name: 'Solution',
-          path: '/category/solution',
+          path: '/brands/solution',
           image: '/img/solution-services.svg'
         },
         {
           id: 4,
           name: 'Office Supplies',
-          path: '/category/office-supplies',
+          path: '/brands/office-supplies',
           image: '/img/office-equipment.svg'
         }
         

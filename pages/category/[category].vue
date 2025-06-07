@@ -43,7 +43,6 @@ watch(page, () => {
     <div v-else>
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
         <CardProduct v-for="post in posts" :key="post.id" :title="post?.title" :link="`/product/${post?.slug}`" :featured_image="post?.featured_image" />
-
       </div>
 
       <!-- Pagination controls -->
