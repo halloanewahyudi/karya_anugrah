@@ -28,7 +28,7 @@
   </section> <!-- end section product -->
 
   <section class="py-20">
-    <div class="container">
+    <div class="container"> 
       <div class="text-center mb-10 ">
         <h4 class="text-4xl font-semibold ">Latest News</h4>
         <p>Excellence in Hardware and Software Solutions</p>
