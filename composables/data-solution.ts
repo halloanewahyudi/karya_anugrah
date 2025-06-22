@@ -15,7 +15,7 @@ export const useDataSolution = () => {
     },
     {
       name: 'Solution',
-      description: `POS, Rental, Network & Security, Data Security, CCTV`,
+      description: `POS, Network & Security, Data Security, CCTV`,
       image: '/solution/soluiton3.jpg',
       link: '/brand/solution'
     },

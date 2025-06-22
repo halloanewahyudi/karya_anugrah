@@ -2,21 +2,6 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
- // head
- app: {
-  head: {
-  /*   link: [
-      {
-        rel: 'stylesheet',
-        href: process.env.WP_URL+'/wp-includes/css/dist/block-library/style.css'
-      },
-      {
-        rel: 'stylesheet',
-        href: process.env.WP_URL+'https://yourwordpresssite.com/wp-includes/css/dist/block-library/theme.css'
-      }
-    ] */
-  }
-},
 
   runtimeConfig: {
     public: {
@@ -25,7 +10,6 @@ export default defineNuxtConfig({
   },
   modules: [
     '@nuxtjs/tailwindcss',
-    'v-gsap-nuxt',
     '@nuxt/icon',
     '@nuxtjs/google-fonts',
     'nuxt-marquee',

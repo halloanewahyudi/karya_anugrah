@@ -4,12 +4,12 @@
   </div>
   <div v-else-if="error">Failed to load posts</div>
   <div v-else>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4"> <!-- main -->
       <div class="p-6 lg:p-10 flex fle-col justify-center items-center ">
         <img :src="product?.featured_image" :alt="product?.title" />
       </div>
       <div class="">
-        <div class="bg-gray-50 p-6 lg:p-10">
+        <div class="bg-gray-50 p-6 lg:p-10 min-h-[70vh]">
           <SectionTitle :title="product?.title" class="text-center mb-4" />
           <ul class="flex border-b border-gray-200 mb-4">
             <li class="cursor-pointer px-4 py-2"
@@ -45,6 +45,11 @@
         </div>
       </div>
     </div>
+<!--  relate product -->
+<div class="grid-col">
+</div>
+<!-- end related product -->
+
   </div>
 </template>
 
@@ -54,6 +59,7 @@ const route = useRoute()
 const { url, options } = useWpApi('product/v1/by-slug/' + route.params.slug)
 const { data: product, status, error } = useLazyFetch(url, options)
 const activeTab = ref<'description' | 'specification'>('description')
+
 </script>
 
 <style></style>

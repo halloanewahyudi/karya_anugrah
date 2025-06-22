@@ -39,7 +39,7 @@
       <div class="max-w-[460px] w-full mx-auto bg-white/90 rounded-lg border p-6 lg:p-10">
         <h4>Get In Touch</h4>
         <p>Fill out the form below and we will get back to you as soon as possible </p>
-        <FormContact class="mt-6" />
+        <Form class="mt-6" />
       </div>
 
     </div>

@@ -62,8 +62,7 @@
       <div class="container flex flex-col gap-6 mb-20">
         <SectionTitle title="OUR LATEST WORK" class="text-center mb-10" />
         <div v-for="about2 in aboutTwo" :key="about2.title" class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-center">
-          <div class="p-6 flex flex-col gap-4"
-            v-gsap.whenVisible.fromTo="[{ opacity: 0, scale: .4 }, { opacity: 1, scale: 1, delay: 0.3 }, { opacity: 0, delay: 0.3 }]">
+          <div class="p-6 flex flex-col gap-4">
             <h4 class="text-3xl lg:text-4xl">{{ about2.title }}</h4>
             <p>{{ about2.description }}</p>
           </div>

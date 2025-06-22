@@ -35,12 +35,12 @@ export const useMenus = () => {
           path: '/brands/solution',
           image: '/img/solution-services.svg'
         },
-        {
+       /*  {
           id: 4,
           name: 'Office Supplies',
           path: '/brands/office-supplies',
           image: '/img/office-equipment.svg'
-        }
+        } */
         
       ]
     },

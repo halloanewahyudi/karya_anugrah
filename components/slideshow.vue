@@ -4,13 +4,13 @@
     <!--  <div class="absolute z-20 bg-gradient-to-br from-dark via-brand/60 to-brand-700/0 top-0 left-0 right-0 h-screen">
     </div> -->
     <Splide ref="splide" :options="options">
-      <SplideSlide v-for="(slide, index) in slides" :key="index" class="relative bg-[#BFD5E3] "
+      <SplideSlide v-for="(slide, index) in slideData" :key="index" class="relative bg-[#BFD5E3] "
         >
         <div class="container"  :class="`bg-['${slide.bgColor}']`">
           <div class="grid grid-cols-1 lg:grid-cols-2 items-center min-h-[546px]">
             <div>
               <h1 class="text-4xl lg:text-8xl" v-html="slide.title"></h1>
-              <p class="mt-2 text-xl " v-html="slide.description"></p>
+              <p class="mt-2 text-xl " v-html="slide.content"></p>
               <NuxtLink v-if="slide.button" :to="slide.button.link" class="btn mt-4 inline-block">{{ slide.button.text }}</NuxtLink>
             </div>
             <img :src="slide.image" :alt="'Image ' + index" class="" />
@@ -35,28 +35,10 @@
 <script setup>
 import { Splide, SplideSlide } from '@splidejs/vue-splide'
 
-const slides = [
-  {
-    title: 'IT Total  Solution ',
-    image: '/slide/slide1-karyaanugerah.jpg',
-    description: 'designed to elevate  your technological landscape',
-    button: {
-      text: 'Read More',
-      link: '/about'
-    },
-    bgColor: '#BFD5E3'
-  },
-  {
-    title: 'IT Total  Solution ',
-    image: '/slide/slide1-karyaanugerah.jpg',
-    description: 'designed to elevate  your technological landscape',
-    button: {
-      text: 'Read More',
-      link: '/about'
-    },
-    bgColor: '#BFD5E3'
-  }
-]
+
+const {url} = useWpApi('custom-api/v1/slideshow');
+
+const { data: slideData, status: slideStatus, error: slideError, refresh: slideRefresh, execute: slideExecute } = useLazyFetch(url);
 
 const options = {
   type: 'loop',
