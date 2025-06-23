@@ -3,7 +3,8 @@
     <Slideshow />
   </section>
 
-<HomeSection />
+<HomeSolution />
+<HomeAbout/>
  
   <section class="relative bg-neutral-100 py-20"> <!-- section product -->
     <div class="container">
@@ -60,13 +61,7 @@
 </template>
 <script lang="ts" setup>
 
-// page meta
-definePageMeta({
-  layout: 'default',
-  title: 'Home',
-  description: 'Home',
-  keywords: 'Home',
-})
+
 
 const { solutions, products, partners, brands } = useDataHome()
 

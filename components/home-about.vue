@@ -1,6 +1,6 @@
 <template>
   <div>
-  <div v-if="status === 'pending'" class="flex justify-center items-center py-40">
+    <div v-if="status === 'pending'" class="flex justify-center items-center py-40">
     <Icon name="line-md:loading-twotone-loop" class="text-5xl text-brand animate-spin" />
   </div>
   <div v-else-if="error">Failed to load posts</div>
@@ -31,24 +31,10 @@
 </template>
 
 <script lang="ts" setup>
-type Solution = {
-  image: string
-  title: string
-  description: string
-  link: string
-}
-
 const { url } = useWpApi("custom-api/v1/page/home-page");
 const { data: page, status, error } = useLazyFetch(url);
-
-const solutions = ref<Solution[]>([])
-
-watchEffect(() => {
-  if (page.value?.acf?.solution) {
-    solutions.value = Object.values(page.value.acf.solution) as Solution[]
-  }
-})
 </script>
 
+<style>
 
-<style></style>
+</style>
