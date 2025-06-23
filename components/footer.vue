@@ -10,22 +10,18 @@
            <div class="flex flex-col gap-2">
             <span class="flex  gap-2">
               <Icon name="iconoir:map-pin" />
-              <div class="">
-                Citra Garden 6 <br>
-                Pegadungan, Tegal Alur, <br> 
-                Kec. Kalideres, Kota Jakarta Barat
-              </div>
+              <div class="" v-html="settings.alamat"></div>
             </span>
             <span class="flex items-center gap-2">
               <Icon name="iconoir:phone" />
               <div class="">
-                +62 821 xxx xxx
+                {{ settings.telepon }}
               </div>
             </span>
             <span class="flex items-center gap-2">
               <Icon name="iconoir:mail"  />
               <div class="">
-                yKo8b@example.com
+                <a :href="`mailto:${settings.email}`">{{ settings.email }}</a>
               </div>
             </span>
            </div>
@@ -35,7 +31,7 @@
         <div class="flex flex-col gap-4 lg:col-span-3"> <!-- solution -->
           <h4 class="text-lg">Marketplace</h4>
          <ul class="flex flex-col gap-2">
-       <li ><NuxtLink to="/" class="flex items-center gap-2"> <Icon name="arcticons:tokopedia" class="text-3xl" /> Tokopedia</NuxtLink></li>
+       <li ><a :href="settings.tokopedia" class="flex items-center gap-2"> <Icon name="arcticons:tokopedia" class="text-3xl" /> Tokopedia</a></li>
          </ul>
         </div>
 
@@ -43,8 +39,8 @@
             <h4 class="text-lg">Social Media</h4>
             <ul class="flex flex-col gap-2">
            
-              <li><NuxtLink to="/" class="flex items-center gap-2"> <Icon name="iconoir:instagram" class="text-2xl" /> Instagram </NuxtLink></li>
-              <li><NuxtLink to="/" class="flex items-center gap-2"> <Icon name="iconoir:linkedin" class="text-2xl" /> Linkedin </NuxtLink></li>
+              <li><a :href="settings.instagram" class="flex items-center gap-2"> <Icon name="iconoir:instagram" class="text-2xl" /> Instagram </a></li>
+              <li><a :href="settings.linkedin" class="flex items-center gap-2"> <Icon name="iconoir:linkedin" class="text-2xl" /> Linkedin </a></li>
              </ul>
           
         </div>
@@ -60,6 +56,9 @@
 <script lang="ts" setup>
  const { products, solutions } = useDataHome()
  const {menus} = useMenus()
+
+ const { url } = useWpApi('custom-api/v1/kat-settings')
+ const { data: settings, status, error } = useLazyFetch(url);
 </script>
 
 <style scoped>
