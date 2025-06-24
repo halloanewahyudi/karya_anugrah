@@ -11,7 +11,7 @@
           <p>What can we provide to you today?</p>
           <!--  <div class="w-12 h-1 bg-brand mx-auto mt-2"></div> -->
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <GsapFadeUp start="top 90%" end="bottom 5%" :from-y="60" :stagger="1" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <!-- soluiton -->
          <div class="" v-for="post in solutions" :key="post">
           <div
@@ -28,7 +28,7 @@
         </div>
           <!-- end soluiton -->
 
-        </div>
+        </GsapFadeUp>
       </div>
     </section>
      </div>
