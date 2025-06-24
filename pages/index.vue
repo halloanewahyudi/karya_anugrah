@@ -41,7 +41,6 @@
 <script lang="ts" setup>
 
 
-
 const { url, options } = useWpApi('post/v1/all?_embed', {
   query: computed(() => ({
     per_page: 4,

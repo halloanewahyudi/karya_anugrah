@@ -31,7 +31,7 @@
 
 <script lang="ts" setup>
  const {url} = useWpApi('custom-api/v1/products')
-const { data: productData, status, error } = useLazyFetch(url)
+const { data: productData, status, error } = useLazyFetch(url, { server: false })
 
 </script>
 

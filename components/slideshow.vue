@@ -57,7 +57,7 @@ import { Splide, SplideSlide } from "@splidejs/vue-splide";
 
 const { url } = useWpApi("custom-api/v1/slideshow");
 
-const { data: slideData, status, error } = useLazyFetch(url);
+const { data: slideData, status, error } = useLazyFetch(url, { server: false });
 
 const options = {
   type: "loop",

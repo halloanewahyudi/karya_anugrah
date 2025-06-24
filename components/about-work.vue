@@ -32,7 +32,7 @@
 
 <script lang="ts" setup>
  const {url} = useWpApi("custom-api/v1/projects");
- const { data: work, status, error } = useLazyFetch(url);
+ const { data: work, status, error } = useLazyFetch(url, { server: false });
 </script>
 
 <style>

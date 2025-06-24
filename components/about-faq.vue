@@ -45,7 +45,7 @@
 
 <script lang="ts" setup>
 const { url } = useWpApi("custom-api/v1/faqs");
-const { data: faqs, status, error } = useLazyFetch(url);
+const { data: faqs, status, error } = useLazyFetch(url, { server: false });
 
 
 const openAnswer = ref<number | null>(null);
